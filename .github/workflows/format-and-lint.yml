@@ -1,0 +1,38 @@
+---
+name: Format and Lint
+"on": [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js 20.11
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.11
+      - uses: pnpm/action-setup@v3
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 8.14
+          run_install: false
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Format
+        run: pnpm run prettier
+
+      - name: Check for formatting changes
+        id: check-formatting
+        run: |
+          git diff --exit-code --name-only
+          if [ $? -ne 0 ]; then
+            echo "Formatting changes detected. Run `pnpm run prettier` to format."
+            exit 1
+          fi
+
+      - name: Lint
+        run: pnpm run lint
