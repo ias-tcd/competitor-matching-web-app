@@ -1,0 +1,16 @@
+---
+version: '3.8'
+
+services:
+    web-app:
+        image: competitor-matching-web-app/web-app:latest
+        build:
+            context: ../
+            dockerfile: docker/Dockerfile
+        ports:
+            - '5173:80'
+        environment:
+            - VITE_APP_ENV=development
+            - VITE_APP_API_URL=localhost:8000
+        env_file:
+            - ../.env
