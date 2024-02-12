@@ -1,42 +1,98 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
 #root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
     text-align: center;
+    margin-top: -50px;
 }
 
-.logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-}
-.logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-    filter: drop-shadow(0 0 2em #61dafbaa);
+#userInput {
+    text-align: center;
+    margin-top: 10px;
 }
 
-@keyframes logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+#buttons {
+    text-align: center;
+    margin-top: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    a:nth-of-type(2) .logo {
-        animation: logo-spin infinite 20s linear;
-    }
+.media-type-options {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
 }
 
-.card {
-    padding: 2em;
+.media-type-button,
+.upload-button,
+.cancel-button,
+.text-uploader-button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #39ff14;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s; /* Adding a smooth transition effect */
 }
 
-.read-the-docs {
-    color: #888;
+.media-type-button:hover,
+.upload-button:hover,
+.cancel-button:hover,
+.text-uploader-button:hover {
+    background-color: #0d9b00; /* Darker neon green on hover */
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.dialog-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #373d48;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 3;
+}
+
+.upload-button.dialog,
+.cancel-button,
+.text-uploader-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #39ff14;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s; /* Adding a smooth transition effect */
+}
+
+.upload-button.dialog:hover,
+.cancel-button:hover,
+.text-uploader-button:hover {
+    background-color: #0d9b00; /* Darker neon green on hover */
 }
