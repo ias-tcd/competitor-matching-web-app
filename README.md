@@ -21,7 +21,7 @@ After cloning the repostitory do the following:
 
 ```bash
 # Create a .env file, this can be empty to start with
-touch .env
+echo VITE_APP_API_URL=localhost:8000 > .env
 
 # Install the dependencies locally
 pnpm install
@@ -38,6 +38,11 @@ The application should now be available to view in your browser at http://localh
 You can use ctrl-C to quit the application.
 
 Any changes made to the source code will mean the docker image must be rebuilt. Running `make run` after a change will take care of this.
+
+# Deployment
+
+This application is deployed using Docker and GitHub Actions to an AWS EC2 instance.
+You can find the application [here](http://ec2-34-243-132-123.eu-west-1.compute.amazonaws.com/).
 
 # Useful Commands
 
