@@ -20,8 +20,8 @@ You must have the following installed before continuing:
 After cloning the repostitory do the following:
 
 ```bash
-# Create a .env file, this can be empty to start with
-touch .env
+# Create a .env file and populate it with the API url
+echo VITE_APP_API_URL=http://localhost:8000 >> .env
 
 # Install the dependencies locally
 pnpm install
