@@ -73,31 +73,31 @@ button:focus-visible {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  .image-container {
+}
+
+.image-container {
     position: relative;
     margin-top: 20px;
-  }
-  
-  .image-container img {
+}
+
+.image-container img {
     max-width: 100%;
     height: auto;
-  }
-  
-  .bounding-box {
+}
+
+.bounding-box {
     position: absolute;
     border: 2px solid #1ac71a;
     background-color: rgba(26, 199, 26, 0.2);
     z-index: 1;
-  }
-  
-  .bounding-box p {
+}
+
+.bounding-box p {
     margin: 0;
     padding: 2px;
     background-color: #1ac71a;
     color: #ffffff;
     font-size: 12px;
-  }
-  
-  /*----------------------*/
+}
+
+/*----------------------*/
