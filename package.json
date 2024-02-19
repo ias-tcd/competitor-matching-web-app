@@ -25,6 +25,12 @@
         }
     },
     "dependencies": {
+        "@tensorflow-models/coco-ssd": "^2.2.3",
+        "@tensorflow/tfjs": "^4.17.0",
+        "@tensorflow/tfjs-backend-cpu": "^2.8.6",
+        "@tensorflow/tfjs-backend-webgl": "^2.8.6",
+        "@tensorflow/tfjs-converter": "^2.8.6",
+        "@tensorflow/tfjs-core": "^2.8.6",
         "axios": "^1.6.7",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
@@ -46,5 +52,11 @@
         "prettier": "^3.2.4",
         "typescript": "^5.2.2",
         "vite": "^5.0.8"
+    },
+    "peerDependencies": {
+        "@tensorflow/tfjs-backend-cpu": "^2.8.6",
+        "@tensorflow/tfjs-backend-webgl": "^2.8.6",
+        "@tensorflow/tfjs-converter": "^2.8.6",
+        "@tensorflow/tfjs-core": "^2.8.6"
     }
 }
