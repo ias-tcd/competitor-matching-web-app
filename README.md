@@ -39,6 +39,11 @@ You can use ctrl-C to quit the application.
 
 Any changes made to the source code will mean the docker image must be rebuilt. Running `make run` after a change will take care of this.
 
+# Deployment
+
+This application is deployed using Docker and GitHub Actions to an AWS EC2 instance.
+You can find the application [here](http://ec2-34-243-132-123.eu-west-1.compute.amazonaws.com/).
+
 # Useful Commands
 
 Below are some useful commands and what they do.

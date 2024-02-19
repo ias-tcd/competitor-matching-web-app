@@ -1,0 +1,13 @@
+---
+version: '3.8'
+
+services:
+    web-app:
+        image: '${WEBSITE_IMAGE}'
+        build:
+            context: ../
+            dockerfile: docker/Dockerfile
+        ports:
+            - '80:80'
+        environment:
+            - VITE_APP_ENV=production
