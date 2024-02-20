@@ -8,11 +8,7 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-        <BoundBox
-            onClose={function (): void {
-                throw new Error('Function not implemented.');
-            }}
-        />
+        <BoundBox />
         {/*<App />*/}
     </React.StrictMode>,
 );
