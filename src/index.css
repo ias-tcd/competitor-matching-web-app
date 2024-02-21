@@ -70,10 +70,10 @@ button:focus-visible {
 /* Bounding Box css */
 
 body {
-    background: linear-gradient(135deg, #2980b9, #2c3e50); 
+    background: linear-gradient(135deg, #2980b9, #2c3e50);
     margin: 0;
     padding: 0;
-    height: 100vh; 
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,27 +85,26 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9); 
-    border-radius: 10px; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .image-container {
     position: relative;
-    margin-right: 20px; 
-    border: 2px solid #ccc; 
-    border-radius: 10px; 
+    margin-right: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
     margin-left: 200px;
-    overflow: hidden; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .image-container img {
-    max-width: 100%; 
-    display: block; 
-    border-radius: 10px; 
+    max-width: 100%;
+    display: block;
+    border-radius: 10px;
 }
-
 
 .bounding-box {
     position: absolute;
@@ -138,29 +137,30 @@ button:hover {
 
 .image-list {
     display: fixed;
-    flex-direction: column; 
+    flex-direction: column;
     overflow-y: auto;
-    background-color: white; 
-    padding: 10px; 
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .image-list-prev {
     width: 100px;
     height: 100px;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
     cursor: pointer;
     border: 2px solid transparent;
-    transition: border-color, transform 0.3s ease;
+    transition:
+        border-color,
+        transform 0.3s ease;
 }
 .image-list-prev:hover {
-    transform: scale(1.05); 
-
+    transform: scale(1.05);
 }
 
 .image-list-prev.selected {
-    border-color: #159314; 
+    border-color: #159314;
     box-shadow: #159314;
 }
 /*----------------------*/
