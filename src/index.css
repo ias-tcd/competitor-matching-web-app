@@ -70,7 +70,7 @@ button:focus-visible {
 /* Bounding Box css */
 
 body {
-    background: linear-gradient(135deg, #2980b9, #2c3e50);
+    background: linear-gradient(6deg, #142835, #242424);
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -95,7 +95,7 @@ body {
     margin-right: 20px;
     border: 2px solid #ccc;
     border-radius: 10px;
-    margin-left: 200px;
+    margin-left: 20px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -104,6 +104,7 @@ body {
     max-width: 100%;
     display: block;
     border-radius: 10px;
+    border-bottom: 6px solid #ccc;
 }
 
 .bounding-box {
@@ -111,6 +112,7 @@ body {
     border: 2px solid #1ac71a;
     background-color: rgba(26, 199, 26, 0.1);
     z-index: 1;
+    max-height: 70%;
 }
 
 .bounding-box p {
@@ -119,6 +121,8 @@ body {
     background-color: #1ac71a;
     color: #ffffff;
     font-size: 12px;
+    text-align: left;
+    text-indent: 10%;
 }
 
 button {
@@ -137,6 +141,7 @@ button:hover {
 
 .image-list {
     display: fixed;
+    visibility: hidden;
     flex-direction: column;
     overflow-y: auto;
     background-color: white;
@@ -162,5 +167,21 @@ button:hover {
 .image-list-prev.selected {
     border-color: #159314;
     box-shadow: #159314;
+}
+
+.toggle-button {
+    background-color: #1ac71a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    margin-left: 5px;
+}
+
+.toggle-button:hover {
+    background-color: #159314;
 }
 /*----------------------*/

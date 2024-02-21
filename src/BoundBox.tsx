@@ -17,6 +17,12 @@ const BoundBox: React.FC = () => {
     }
     const [selectedImage, setSelectedImage] = useState(0);
     const [images, setImages] = useState<ImageState[]>([]);
+    const [showBoundingBox, setShowBoundingBox] = useState(true);
+
+    const imageListElements = document.getElementsByClassName('image-list');
+    if (imageListElements && imageListElements.length > 0) {
+        (imageListElements[0] as HTMLElement).style.visibility = 'visible';
+    }
 
     const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files) {
@@ -26,8 +32,23 @@ const BoundBox: React.FC = () => {
                 file: file,
             }));
             setImages(prevImages => [...prevImages, ...newImages]);
+            setImageData(URL.createObjectURL(e.target.files[0]));
+
+            const model = await cocoSsd.load();
+            const allPredictions = await Promise.all(
+                newImages.map(async imageData => {
+                    const imageElement = document.createElement('img');
+                    imageElement.src = imageData.url;
+                    const predictions = await model.detect(imageElement);
+                    return predictions;
+                }),
+            );
+
+            const allClasses = allPredictions.flat().map(prediction => prediction.class);
+            console.log('Detected classes:', allClasses);
         }
     };
+
     const handleImageClick = (index: number) => {
         setSelectedImage(index);
         const file = images[index]?.file;
@@ -55,6 +76,10 @@ const BoundBox: React.FC = () => {
         reader.readAsDataURL(file);
     };
 
+    const toggleBoundingBox = () => {
+        setShowBoundingBox(prev => !prev);
+    };
+
     return (
         <>
             <div className='object-detector'>
@@ -66,6 +91,7 @@ const BoundBox: React.FC = () => {
                     onChange={handleFileChange}
                     style={{ display: 'none' }}
                 />
+
                 {imageData && (
                     <div className='image-container'>
                         <img src={imageData} alt='Uploaded' />
@@ -75,6 +101,7 @@ const BoundBox: React.FC = () => {
                                     key={index}
                                     className='bounding-box'
                                     style={{
+                                        opacity: showBoundingBox ? 1 : 0,
                                         top: prediction.bbox[1],
                                         left: prediction.bbox[0],
                                         width: prediction.bbox[2],
@@ -84,6 +111,12 @@ const BoundBox: React.FC = () => {
                                     <p>{prediction.class}</p>
                                 </div>
                             ))}
+                        <label htmlFor='box-toggle-button' style={{ color: 'black', fontFamily: 'sans-serif' }}>
+                            Bounding Box:
+                        </label>
+                        <button className='toggle-button' id='box-toggle-button' onClick={toggleBoundingBox} style={{}}>
+                            {showBoundingBox ? 'On' : 'Off'}
+                        </button>
                     </div>
                 )}
                 <div
@@ -93,11 +126,11 @@ const BoundBox: React.FC = () => {
                         borderBlockColor: 'black',
                         display: 'inline-block',
                         position: 'relative',
-                        height: 600,
+                        height: 240,
                         width: 180,
                     }}
                 >
-                    <p style={{ textAlign: 'center' }}>Images</p>
+                    <p style={{ textAlign: 'center', color: 'black' }}>Images</p>
                     {images.map((image, index) => (
                         <img
                             key={index}
@@ -111,7 +144,7 @@ const BoundBox: React.FC = () => {
             </div>
             {/*{isLoading && <p>Loading...</p>}*/}
 
-            <button onClick={() => fileInputRef.current?.click()}>Select Image</button>
+            <button onClick={() => fileInputRef.current?.click()}>Select Images</button>
         </>
     );
 };

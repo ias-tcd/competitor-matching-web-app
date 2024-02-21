@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import ImageUploader from './ImageUploader';
 import TextUploader from './TextUploader';
-import VideoUploader from './VideoUploader'; // Import the VideoUploader component
+import VideoUploader from './VideoUploader';
 import './App.css';
+import './index.css';
 
 function App(): JSX.Element {
     const [isDialogOpen, setIsDialogOpen] = useState(false);
