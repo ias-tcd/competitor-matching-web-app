@@ -7,6 +7,7 @@ import './App.css';
 function App(): JSX.Element {
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [mediaType, setMediaType] = useState<string | null>(null);
+    const [fileNames, setFileNames] = useState<string[]>([]);
 
     const openDialog = (event: React.MouseEvent<HTMLButtonElement>) => {
         const type = event.currentTarget.dataset.type;
@@ -14,6 +15,7 @@ function App(): JSX.Element {
         if (type) {
             setMediaType(type);
             setIsDialogOpen(true);
+            setFileNames([]);
         }
     };
 
@@ -49,12 +51,33 @@ function App(): JSX.Element {
                 <div className='overlay'>
                     <div className='dialog-container'>
                         {/* Conditionally render the uploader based on the mediaType */}
-                        {mediaType === 'Images' && <ImageUploader onClose={closeDialog} />}
+                        {mediaType === 'Images' && <ImageUploader onClose={closeDialog} setFileNames={setFileNames} />}
                         {mediaType === 'Text' && <TextUploader onClose={closeDialog} />}
                         {mediaType === 'Video' && <VideoUploader onClose={closeDialog} />}
                     </div>
                 </div>
             )}
+            <div
+                style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+                    gap: '10px',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    marginTop: '50px',
+                }}
+            >
+                {fileNames &&
+                    fileNames.map((name: string, index: number) => (
+                        <div style={{ maxWidth: '400px' }} key={name + index}>
+                            <img
+                                alt={`result ${index}`}
+                                src={`${process.env.VITE_APP_API_URL}/images/predictions/results?image_path=${name}`}
+                                style={{ width: '100%', height: 'auto' }}
+                            />
+                        </div>
+                    ))}
+            </div>
         </div>
     );
 }
