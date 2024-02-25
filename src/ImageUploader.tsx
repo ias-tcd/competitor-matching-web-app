@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import BoundBox from './BoundBox';
 
 interface ImageState {
     url: string;
@@ -29,7 +30,9 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose }) => {
     const handleUpload = () => {
         if (fileList) {
             console.log('Uploading images:', fileList);
-            alert('Images uploaded successfully!');
+            {
+                /*alert('Images uploaded successfully!');*/
+            }
         }
         onClose();
     };
@@ -41,21 +44,24 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose }) => {
     };
 
     return (
-        <div className='dialog-container'>
-            <p>Upload multiple images</p>
-            <input type='file' accept='image/*' multiple onChange={handleFileChange} />
-            <div>
-                {images.map((image, index) => (
-                    <img key={index} src={image.url} alt={image.alt} style={{ width: '100px', margin: '10px' }} />
-                ))}
+        <div className='Page'>
+            <div className='dialog-container'>
+                <p>Upload multiple images</p>
+                <input type='file' accept='image/*' multiple onChange={handleFileChange} style={{ display: 'none' }} />
+                <div>
+                    {images.map((image, index) => (
+                        <img key={index} src={image.url} alt={image.alt} style={{ width: '100px', margin: '10px' }} />
+                    ))}
+                </div>
+                <p>Total Images: {images.length}</p>
+                {<BoundBox />}
+                <button className='upload-button' onClick={handleUpload}>
+                    Upload Images
+                </button>
+                <button className='cancel-button' onClick={handleCancel}>
+                    Cancel
+                </button>
             </div>
-            <p>Total Images: {images.length}</p>
-            <button className='upload-button' onClick={handleUpload}>
-                Upload Images
-            </button>
-            <button className='cancel-button' onClick={handleCancel}>
-                Cancel
-            </button>
         </div>
     );
 };
