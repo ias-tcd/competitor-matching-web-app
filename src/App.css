@@ -1,19 +1,38 @@
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background-color: black;
     color: white;
     font-family: 'Arial', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    animation: SpinningWheel 20s ease infinite forwards;
+    background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ff0000, #00ff00);
+    background-size: 500% 100%;
+}
+@keyframes SpinningWheel {
+    0%{
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 25% 50%;
+    }
+    50% {
+        background-position: 50% 50%;
+    }
+    75% {
+        background-position: 75% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+
+    }
 }
 
 #root {
     text-align: center;
-    margin-top: -50px;
+    margin-top: 0px;
 }
 
 #userInput {
@@ -44,7 +63,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s; /* Adding a smooth transition effect */
+    transition: background-color 0.3s;
 }
 
 .media-type-button:hover,
