@@ -29,6 +29,7 @@
         "@tensorflow-models/coco-ssd": "^2.2.3",
         "@tensorflow/tfjs": "^4.17.0",
         "axios": "^1.6.7",
+        "pnpm": "^8.15.4",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-icons": "^5.0.1",
