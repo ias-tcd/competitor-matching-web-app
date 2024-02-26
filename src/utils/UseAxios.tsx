@@ -15,6 +15,7 @@ import axios from 'axios';
  * @returns
  */
 const UseAxios = () => {
+    process.env.VITE_APP_API_URL = process.env.VITE_APP_API_URL ?? 'http://localhost:8000';
     const axiosInstance = axios.create({
         baseURL: process.env.VITE_APP_API_URL,
     });
