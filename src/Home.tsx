@@ -53,7 +53,9 @@ function Home(): JSX.Element {
                 <div className='overlay'>
                     <div className='dialog-container'>
                         {/* Conditionally render the uploader based on the mediaType */}
-                        {mediaType === 'Images' && <ImageUploader onClose={closeDialog} setFileNames={setFileNames} />}
+                        {mediaType === 'Images' && (
+                            <ImageUploader onClose={closeDialog} /*setFileNames={setFileNames}*/ />
+                        )}
                         {mediaType === 'Text' && <TextUploader onClose={closeDialog} />}
                         {mediaType === 'Video' && <VideoUploader onClose={closeDialog} />}
                     </div>
