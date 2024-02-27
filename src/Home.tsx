@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ImageUploader from './ImageUploader';
 import TextUploader from './TextUploader';
 import VideoUploader from './VideoUploader';
