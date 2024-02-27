@@ -1,7 +1,7 @@
-import './NavBar.css';
 import { FaHome, FaUser } from 'react-icons/fa';
+import './NavBar.css';
 
-const Navbar = () => {
+const NavBar = () => {
     return (
         <div className='navbar'>
             <div className='nav-brand'>
@@ -23,4 +23,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default NavBar;

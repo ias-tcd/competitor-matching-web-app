@@ -2,7 +2,6 @@ import { useState } from 'react';
 import ImageUploader from '../../components/ImageUploader/ImageUploader';
 import TextUploader from '../../components/TextUploader/TextUploader';
 import VideoUploader from '../../components/VideoUploader/VideoUploader';
-import Navbar from '../../components/NavBar/NavBar';
 import './Home.css';
 
 function Home(): JSX.Element {
@@ -23,7 +22,6 @@ function Home(): JSX.Element {
 
     return (
         <div id='root'>
-            <Navbar />
             <div className='web-brand'>
                 <h1>IAS</h1>
             </div>
