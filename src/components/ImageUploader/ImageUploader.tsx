@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import UseAxios from './utils/UseAxios';
+import UseAxios from '../../utils/UseAxios';
 
 interface ImageState {
     url: string;

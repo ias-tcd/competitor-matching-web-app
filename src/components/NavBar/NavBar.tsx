@@ -1,4 +1,4 @@
-import './Navbar.css';
+import './NavBar.css';
 import { FaHome, FaUser } from 'react-icons/fa';
 
 const Navbar = () => {

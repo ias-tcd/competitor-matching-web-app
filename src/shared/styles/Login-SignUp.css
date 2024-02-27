@@ -55,6 +55,8 @@ form {
     margin-right: 10px;
     color: #fff;
     font-size: 1.5rem;
+    margin-top: 10px;
+    margin-bottom: -8px;
 }
 
 input {

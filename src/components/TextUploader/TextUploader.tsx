@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Home.css';
+import '../../pages/Home/Home.css';
 
 interface TextUploaderProps {
     onClose: () => void;

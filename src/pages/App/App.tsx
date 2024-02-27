@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Home.tsx';
-import LoginPage from './pages/LoginPage.tsx';
+import Home from '../Home/Home.tsx';
+import LoginPage from '../Login/LoginPage.tsx';
+import SignUpPage from '../SignUp/SignUpPage.tsx';
 
 function App(): JSX.Element {
     return (
@@ -8,6 +9,7 @@ function App(): JSX.Element {
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/login' element={<LoginPage />} />
+                <Route path='/signUp' element={<SignUpPage />} />
             </Routes>
         </Router>
     );

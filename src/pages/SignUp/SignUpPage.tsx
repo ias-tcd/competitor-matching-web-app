@@ -1,15 +1,20 @@
-import './LoginPage.css';
+import '../../shared/styles/Login-SignUp.css';
 import { FaUser, FaLock } from 'react-icons/fa';
+import { CiUser } from 'react-icons/ci';
 import { Link } from 'react-router-dom';
-import Navbar from '../components/NavBar';
+import Navbar from '../../components/NavBar/NavBar';
 
-const LoginPage = () => {
+const SignUpPage = () => {
     return (
         <>
             <Navbar />
             <div className='wrapper'>
                 <form action=''>
-                    <h1>Login</h1>
+                    <h1>Sign Up</h1>
+                    <div className='input-box'>
+                        <input type='text' placeholder='Name' required />
+                        <CiUser className='icon' />
+                    </div>
                     <div className='input-box'>
                         <input type='text' placeholder='Username' required />
                         <FaUser className='icon' />
@@ -20,12 +25,12 @@ const LoginPage = () => {
                     </div>
 
                     <button id='Sign-up-btn' type='submit'>
-                        <Link to='/'>Login</Link>
+                        <Link to='/'>Sign Up</Link>
                     </button>
 
                     <div className='register-link'>
                         <p>
-                            Don't have an account? <Link to='/Register'>Sign Up</Link>
+                            Already have an account? <Link to='/login'>Login</Link>
                         </p>
                     </div>
                 </form>
@@ -33,4 +38,4 @@ const LoginPage = () => {
         </>
     );
 };
-export default LoginPage;
+export default SignUpPage;

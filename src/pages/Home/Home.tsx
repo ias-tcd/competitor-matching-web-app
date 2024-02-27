@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import ImageUploader from './ImageUploader';
-import TextUploader from './TextUploader';
-import VideoUploader from './VideoUploader';
-import Navbar from './components/NavBar';
+import ImageUploader from '../../components/ImageUploader/ImageUploader';
+import TextUploader from '../../components/TextUploader/TextUploader';
+import VideoUploader from '../../components/VideoUploader/VideoUploader';
+import Navbar from '../../components/NavBar/NavBar';
 import './Home.css';
 
 function Home(): JSX.Element {
