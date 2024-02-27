@@ -9,7 +9,7 @@
     padding: 0.6rem;
     z-index: 1;
     display: flex;
-    align-items: baseline; 
+    align-items: baseline;
 }
 
 .nav-links {
@@ -42,5 +42,3 @@
     font-size: 1.5rem;
     margin-right: 3rem;
 }
-
-

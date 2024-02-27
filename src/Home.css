@@ -25,8 +25,8 @@ body {
 
 #root {
     text-align: center;
-    margin-top: 20px; 
-    padding: 20px; 
+    margin-top: 20px;
+    padding: 20px;
 }
 
 #userInput {
@@ -37,7 +37,7 @@ body {
 #buttons {
     text-align: center;
     margin-top: 10px;
-    outline: none; 
+    outline: none;
 }
 
 .media-type-options {
@@ -61,15 +61,15 @@ body {
 
 .dialog-container {
     text-align: center;
-    padding: 24px; 
+    padding: 24px;
     background-color: rgba(50, 91, 56, 0.618);
-    border-radius: 0px; 
+    border-radius: 0px;
     position: relative;
     z-index: 3;
 }
 
 .web-brand {
-    color: #1ed70d; 
+    color: #1ed70d;
     font-weight: bold;
     font-size: 1.5rem;
 }
@@ -81,25 +81,22 @@ body {
 .upload-button.dialog,
 .text-uploader-button {
     margin: 0 10px;
-    padding: 12px 20px; 
+    padding: 12px 20px;
     background-color: rgb(32, 32, 32);
     color: rgb(255, 255, 255);
     border: none;
-    border-radius: 0px; 
+    border-radius: 0px;
     cursor: pointer;
     transition: background-color 0.3s;
-    outline: none !important; 
+    outline: none !important;
 }
 
 .media-type-button:hover,
 .upload-button:hover,
 .cancel-button:hover,
-.text-uploader-button:hover 
-.upload-button.dialog:hover,
+.text-uploader-button:hover .upload-button.dialog:hover,
 .cancel-button:hover,
 .text-uploader-button:hover {
     background-color: #292929;
     color: #1ed70d;
 }
-
-
