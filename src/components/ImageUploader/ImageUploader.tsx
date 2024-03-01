@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import UseAxios from '../../utils/UseAxios';
 
 interface ImageState {
     url: string;
@@ -8,11 +9,13 @@ interface ImageState {
 
 interface ImageUploaderProps {
     onClose: () => void;
+    setFileNames: (fileNames: string[]) => void;
 }
 
-const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose }) => {
+const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose, setFileNames }) => {
     const [images, setImages] = useState<ImageState[]>([]);
     const [fileList, setFileList] = useState<FileList | null>(null);
+    const api = UseAxios();
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         if (e.target.files) {
@@ -26,10 +29,19 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose }) => {
         }
     };
 
-    const handleUpload = () => {
+    const handleUpload = async () => {
         if (fileList) {
-            console.log('Uploading images:', fileList);
-            alert('Images uploaded successfully!');
+            let success = false;
+            const formData = new FormData();
+            images?.forEach((image: ImageState, index: number) => formData.append(`images[${index}]`, image?.file));
+            try {
+                const { data } = await api.post('/images/predictions/', formData);
+                setFileNames(data?.images);
+                success = true;
+            } catch (err) {
+                console.error(err);
+            }
+            alert(`Images uploaded ${success ? '' : 'un'}successfully!`);
         }
         onClose();
     };

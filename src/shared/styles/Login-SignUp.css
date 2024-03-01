@@ -1,0 +1,99 @@
+.login-page {
+    color: white;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(-45deg, #000000, #303230, #414b40, #526350, #0d7d02);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.login-container {
+    text-align: center;
+    padding: 24px;
+    background-color: rgba(50, 91, 56, 0.8);
+}
+
+::placeholder {
+    color: #fff;
+}
+
+h2 {
+    color: #1ed70d;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.icon {
+    margin-right: 10px;
+    color: #fff;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    margin-bottom: -8px;
+}
+
+input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    outline: none;
+    margin-left: 5px;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: rgb(32, 32, 32);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #292929;
+}
+
+p {
+    margin-top: 20px;
+    color: #fff;
+}
+
+a {
+    color: #1ed70d;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
