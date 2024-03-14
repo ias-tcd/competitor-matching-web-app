@@ -54,7 +54,8 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose, setFileNames }) 
 
     return (
         <div className='dialog-container'>
-            <p>Upload multiple images</p>
+            <p style={{ marginBottom: -15 }}>Upload Multiple images along with the</p>
+            <p>brands you would like us to detect:</p>
             <input type='file' accept='image/*' multiple onChange={handleFileChange} />
             <div>
                 {images.map((image, index) => (
@@ -62,6 +63,43 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose, setFileNames }) 
                 ))}
             </div>
             <p>Total Images: {images.length}</p>
+            <div className='brand-checkbox'>
+                <p>Brands:</p>
+                <input type='checkbox' id='Nike' className='brand-checkbox1' value='Nike' />
+                <label htmlFor='Nike' id='Nike'>
+                    Nike
+                </label>
+                <input type='checkbox' id='Adidas' className='brand-checkbox2' value='Adidas' />
+                <label htmlFor='Adidas' id='Adidas'>
+                    Adidas
+                </label>
+                <input type='checkbox' id='Puma' className='brand-checkbox3' value='Puma' />
+                <label htmlFor='Puma' id='Puma'>
+                    Puma
+                </label>
+                <input type='checkbox' id='New-Balance' className='brand-checkbox4' value='New Balence' />
+                <label htmlFor='New Balance' id='New-Balance'>
+                    New Balance
+                </label>
+                <br />
+
+                <input type='checkbox' id='Lululemon' className='brand-checkboxes' value='Lululemon' />
+                <label htmlFor='Lululemon' id='Lululemon'>
+                    Lululemon
+                </label>
+                <input type='checkbox' id='Reebok' className='brand-checkboxes' value='Reebok' />
+                <label htmlFor='Reebok' id='Reebok'>
+                    Reebok
+                </label>
+                <input type='checkbox' id='North-Face' className='brand-checkboxes' value='North Face' />
+                <label htmlFor='North Face' id='North-Face'>
+                    North Face
+                </label>
+                <input type='checkbox' id='Under-Armor' className='brand-checkboxes' value='Under Armor' />
+                <label htmlFor='Under Armor' id='Under-Armor'>
+                    Under Armor
+                </label>
+            </div>
             <button className='upload-button' onClick={handleUpload}>
                 Upload Images
             </button>

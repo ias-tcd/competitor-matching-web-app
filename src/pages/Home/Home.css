@@ -100,3 +100,41 @@ body {
     background-color: #292929;
     color: #1ed70d;
 }
+
+.brand-checkbox {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#Nike {
+    position: relative;
+    left: -9px;
+    margin-bottom: 15px;
+}
+#Lululemon {
+    position: relative;
+    left: -11px;
+}
+
+#Adidas,
+#Reebok {
+    position: relative;
+}
+
+#Puma {
+    position: relative;
+    left: 17px;
+}
+#North-Face {
+    position: relative;
+    left: 10px;
+}
+
+#New-Balance {
+    position: relative;
+    left: 24px;
+}
+#Under-Armor {
+    position: relative;
+    left: 15px;
+}

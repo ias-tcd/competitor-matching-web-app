@@ -1,0 +1,48 @@
+.about-us {
+    margin-top: 500px;
+    padding: 20px;
+}
+
+.logo-divider {
+    display: flex;
+    border-style: solid;
+    color: black;
+    width: 140px;
+    margin-left: 30px;
+    background-color: white;
+}
+
+.company-info {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo-container img {
+    max-width: 300px; /* Adjust the size of the logo as needed */
+}
+
+.team-info,
+.roles-info {
+    margin-bottom: 40px;
+}
+
+.team-info-details {
+    display: inline-block;
+    background-color: aqua;
+    margin-bottom: 40px;
+    width: 400px;
+}
+
+.team-image {
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    width: 150px; /* Adjust the size of the team member images */
+    height: 150px;
+    border-radius: 50%; /* Make the images circular */
+    margin-bottom: 10px;
+}
