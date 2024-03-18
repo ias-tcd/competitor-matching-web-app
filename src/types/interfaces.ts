@@ -8,3 +8,8 @@ export interface TokenClaims {
     first_name: string;
     last_name: string;
 }
+
+export interface Tokens {
+    access: string;
+    refresh: string;
+}

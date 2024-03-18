@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { TokenClaims } from '../types/interfaces';
+import { TokenClaims, Tokens } from '../types/interfaces';
 
 interface IAuthContext {
     user: TokenClaims | null;
@@ -16,6 +16,9 @@ interface IAuthContext {
         email: string;
     }) => Promise<void>;
     logout: () => void;
+    loginError: string | null;
+    registerError: string | null;
+    handleChangedTokens: (tokens: Tokens) => void;
 }
 
 const AuthContext = createContext<IAuthContext>({
@@ -24,6 +27,9 @@ const AuthContext = createContext<IAuthContext>({
     login: () => Promise.resolve(),
     register: () => Promise.resolve(),
     logout: () => {},
+    loginError: '',
+    registerError: '',
+    handleChangedTokens: () => {},
 });
 
 export default AuthContext;
