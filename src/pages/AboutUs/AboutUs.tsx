@@ -40,7 +40,7 @@ const AboutUs = () => {
                 <div className='roles-info'>
                     <div className='team-members'>
                         <div className='team-member'>
-                            <p style={{ visibility: 'visible' }}>Team Lead</p>
+                            <p style={{ color: ' green', fontStyle:'strong', fontSize:20}}>Team Lead</p>
                             <img src={logo} alt='Team Member 1' />
                             <p style={{ marginTop: -8 }}>Sam</p>
                         </div>
@@ -48,7 +48,7 @@ const AboutUs = () => {
 
                     <div className='team-members'>
                         <div className='team-member'>
-                            <p>UI Team</p>
+                        <p style={{ color: ' green', fontStyle:'strong', fontSize:20}}>UI Team</p>
                             <img src={logo} alt='Team Member 1' />
                             <p style={{ marginTop: -8 }}>
                                 Amy<br></br>
@@ -60,7 +60,7 @@ const AboutUs = () => {
 
                     <div className='team-members'>
                         <div className='team-member'>
-                            <p>API Team</p>
+                        <p style={{ color: ' green', fontStyle:'strong', fontSize:20}}>API Team</p>
                             <img src={logo} alt='Team Member 1' />
                             <p style={{ marginTop: -8 }}>
                                 Eva<br></br>
@@ -72,7 +72,7 @@ const AboutUs = () => {
 
                     <div className='team-members'>
                         <div className='team-member'>
-                            <p>Model Team</p>
+                        <p style={{ color: ' green', fontStyle:'strong', fontSize:20, fontFamily:'Montserrat'}}>Model Team</p>
                             <img src={logo} alt='Team Member 1' />
                             <p style={{ marginTop: -8 }}>
                                 Temi<br></br>
@@ -88,7 +88,7 @@ const AboutUs = () => {
 
                     <div className='team-members'>
                         <div className='team-member'>
-                            <p>Data Team</p>
+                        <p style={{ color: ' green', fontStyle:'strong', fontSize:20}}>Data Team</p>
                             <img src={logo} alt='Team Member 1' />
                             <p style={{ marginTop: -8 }}>
                                 Darragh<br></br>
