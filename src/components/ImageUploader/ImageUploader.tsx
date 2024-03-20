@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import UseAxios from '../../utils/UseAxios';
+import { TiDeleteOutline } from 'react-icons/ti';
 
 interface ImageState {
     url: string;
@@ -46,6 +47,11 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose, setFileNames }) 
         onClose();
     };
 
+    const deleteImage = index => {
+        const updatedImages = images.filter((_, i) => i !== index);
+        setImages(updatedImages);
+    };
+
     const handleCancel = () => {
         setImages([]);
         setFileList(null);
@@ -59,7 +65,19 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose, setFileNames }) 
             <input type='file' accept='image/*' multiple onChange={handleFileChange} />
             <div>
                 {images.map((image, index) => (
-                    <img key={index} src={image.url} alt={image.alt} style={{ width: '100px', margin: '10px' }} />
+                    <div key={index} className='image-container'>
+                        <img
+                            src={image.url}
+                            alt={image.alt}
+                            style={{ width: '100px', margin: '10px' }}
+                            className='images'
+                        />
+                        <TiDeleteOutline
+                            className='delete-icon'
+                            style={{ zIndex: 4, color: 'red', position: 'relative', left: 110, top: 10 }}
+                            onClick={() => deleteImage(index)} // Pass the index to the deleteImage function
+                        />
+                    </div>
                 ))}
             </div>
             <p>Total Images: {images.length}</p>

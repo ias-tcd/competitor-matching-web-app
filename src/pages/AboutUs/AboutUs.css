@@ -1,6 +1,6 @@
 .about-us {
     margin-top: 500px;
-    padding: 20px;
+    padding: 201px 201px;
 }
 
 .logo-divider {
@@ -18,7 +18,7 @@
 }
 
 .logo-container img {
-    max-width: 300px; /* Adjust the size of the logo as needed */
+    max-width: 300px;
 }
 
 .team-info,
@@ -33,16 +33,27 @@
     width: 400px;
 }
 
-.team-image {
+
+.team-members {
+    display: flex;
 }
 
+.roles-info {
+    display: flex;
+    flex-direction: row;
+    column-gap: 70px;
+}
 .team-member {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .team-member img {
-    width: 150px; /* Adjust the size of the team member images */
-    height: 150px;
-    border-radius: 50%; /* Make the images circular */
+    width: 70px;
+    height: 120px;
+    border-end-start-radius: 50%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
     margin-bottom: 10px;
 }
