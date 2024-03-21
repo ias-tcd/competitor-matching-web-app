@@ -27,22 +27,54 @@
     text-align: center;
     padding: 24px;
     background-color: rgba(50, 91, 56, 0.8);
+    z-index: 2;
 }
 
+<<<<<<< Updated upstream
+=======
+.error-message {
+    color: rgba(239, 71, 20, 0.858);
+    font-size: 0.9rem;
+    margin-top: 10px;
+    text-align: center;
+    z-index: 2;
+}
+
+>>>>>>> Stashed changes
 ::placeholder {
     color: #fff;
+    z-index: 2;
 }
 
 h2 {
     color: #1ed70d;
     font-size: 2rem;
     margin-bottom: 20px;
+    z-index: 2;
 }
+
+.wrapper{
+    border-style: solid;
+    border-color: rgba(127,195,95,0.6);
+    padding: 20px 40px;
+    border-radius: 1%;
+    background-color: rgba(217, 217, 217,0.2);
+    filter:drop-shadow(50px);
+    display:flex;
+    box-sizing: border-box;
+    position: relative ;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
 
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 2;
 }
 
 .form-group {
@@ -67,21 +99,23 @@ input {
     color: #fff;
     outline: none;
     margin-left: 5px;
+    z-index: 2;
 }
 
 button {
     padding: 12px 20px;
-    background-color: rgb(32, 32, 32);
-    color: rgb(255, 255, 255);
+    background-color: #1ac536;
+    color: rgb(0, 0, 0);
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ;
     margin-top: 10px;
 }
 
 button:hover {
-    background-color: #292929;
+    background-color: #207F30;
+    color: rgb(0, 0, 0);
 }
 
 p {
