@@ -21,5 +21,10 @@ export default defineConfig(({ mode }) => {
             origin: 'http://0.0.0.0:5173',
         },
         envPrefix: 'VITE_APP_',
+        test: {
+            environment: 'jsdom',
+            globals: true,
+            setupFiles: './tests/setup.js',
+        },
     };
 });
