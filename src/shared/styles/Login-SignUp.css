@@ -29,6 +29,13 @@
     background-color: rgba(50, 91, 56, 0.8);
 }
 
+.error-message {
+    color: rgba(239, 71, 20, 0.858);
+    font-size: 0.9rem;
+    margin-top: 10px;
+    text-align: center;
+}
+
 ::placeholder {
     color: #fff;
 }
