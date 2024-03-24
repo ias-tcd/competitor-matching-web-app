@@ -24,7 +24,8 @@ export default defineConfig(({ mode }) => {
         test: {
             environment: 'jsdom',
             globals: true,
-            setupFiles: './tests/setup.js',
+            setupFiles: './config/vitest.ts',
+            mockReset: true,
         },
     };
 });
