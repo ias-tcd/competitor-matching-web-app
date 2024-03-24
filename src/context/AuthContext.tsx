@@ -1,7 +1,7 @@
 import { createContext } from 'react';
 import { TokenClaims, Tokens } from '../types/interfaces';
 
-interface IAuthContext {
+export interface IAuthContext {
     user: TokenClaims | null;
     tokens: {
         access: string;

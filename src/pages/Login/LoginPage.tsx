@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import '../../shared/styles/Login-SignUp.css';
 import { FaUser, FaLock } from 'react-icons/fa';
 import { Link, Navigate } from 'react-router-dom';
@@ -6,14 +6,12 @@ import AuthContext from '../../context/AuthContext';
 
 const LoginPage = () => {
     const { user, login, loginError } = useContext(AuthContext);
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        const target = e.target as typeof e.target & {
-            email: { value: string };
-            password: { value: string };
-        };
-        await login(target.email.value, target.password.value);
+        await login(email, password);
     };
 
     return user ? (
@@ -23,11 +21,25 @@ const LoginPage = () => {
             <form onSubmit={handleSubmit}>
                 <h1>Login</h1>
                 <div className='input-box'>
-                    <input type='text' placeholder='Email' required id='email' />
+                    <input
+                        type='text'
+                        placeholder='Email'
+                        required
+                        id='email'
+                        onChange={e => setEmail(e.target.value)}
+                        value={email}
+                    />
                     <FaUser className='icon' />
                 </div>
                 <div className='input-box'>
-                    <input type='password' placeholder='Password' required id='password' />
+                    <input
+                        type='password'
+                        placeholder='Password'
+                        required
+                        id='password'
+                        onChange={e => setPassword(e.target.value)}
+                        value={password}
+                    />
                     <FaLock className='icon' />
                 </div>
 
