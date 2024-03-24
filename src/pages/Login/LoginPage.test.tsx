@@ -14,6 +14,7 @@ describe('testing the LoginPage', () => {
                         <Routes>
                             <Route path='/login' element={<LoginPage />} />
                             <Route path='/' element={<div data-testid='home-page' />} />
+                            <Route path='/signUp' element={<div data-testid='sign-up' />} />
                         </Routes>
                     </MemoryRouter>
                 </AuthContext.Provider>,
@@ -37,6 +38,18 @@ describe('testing the LoginPage', () => {
         await renderPage(context);
         const homePage = screen.queryAllByTestId('home-page');
         expect(homePage).toHaveLength(0);
+    });
+
+    it('should redirect to sign up if the user presses the button', async () => {
+        const context = {
+            ...mockContext,
+            user: null,
+        };
+        await renderPage(context);
+        const signUpButton = screen.getByText('Sign Up');
+        fireEvent.click(signUpButton);
+        const homePage = screen.queryAllByTestId('sign-up');
+        expect(homePage).toHaveLength(1);
     });
 
     it('should display an error to the user if a login error occurs', async () => {
