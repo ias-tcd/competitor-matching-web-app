@@ -55,7 +55,13 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose, setFileNames }) 
     return (
         <div className='dialog-container'>
             <p>Upload multiple images</p>
-            <input type='file' accept='image/*' multiple onChange={handleFileChange} />
+            <input
+                type='file'
+                accept='image/*'
+                multiple
+                onChange={handleFileChange}
+                data-testid='image-uploader-input'
+            />
             <div>
                 {images.map((image, index) => (
                     <img key={index} src={image.url} alt={image.alt} style={{ width: '100px', margin: '10px' }} />
