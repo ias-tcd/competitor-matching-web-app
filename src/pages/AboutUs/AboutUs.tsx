@@ -115,7 +115,7 @@ const AboutUs = () => {
                             <div className='team-member'>
                                 <img src={data.Pic} alt={`Team Member ${index + 1}`} />
                                 <div className='team-member-name'>
-                                    <p style={{}}>{data.name}</p>
+                                    <p style={{color: '#2D5E4A'}}>{data.name}</p>
                                 </div>
                                 <div className='team-member-detail'>
                                     <p>{data.role}</p>
