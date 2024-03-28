@@ -1,7 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 .about-us {
-    margin-top: 500px;
-    padding: 201px 201px;
+    font-family: 'Roboto';
+    height: 150vh;
 }
+.about-us-bg{
+    height: 100vh;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 150px;
+}
+.about-us-image{
+    width:100%;
+    height: 70%;
+    position:relative;
+}
+.about-us-image img{
+    width:100%;
+    height: 125%;
+    display: block;
+}
+.about-us-title{
+    width: 100%;
+    height:125%;
+    top:0;
+    left:0;
+    position: absolute;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity:0;
+    transition: 0.2s;
+    
+}
+.about-us-title{
+    opacity: 1;
+}
+.about-us-title h1{
+    font-size: 102px;
+    letter-spacing: 0.3rem;
+    margin-bottom: -35px;
+}
+.about-us-title > *{
+    transform: translateY(25px);
+    transition: transform 0.s;
+}
+.about-us-title > *{
+    transform: translateY(0px);
+}
+.underline{
+    color: #6EFF29;
+    padding: 0px;
+    white-space:0px;
+}
+
+
+.team-image{
+    opacity:0.5;
+    text-wrap:wrap; 
+    width: 75%;
+    filter:blur(01px);
+    z-index: 2;
+
+}
+
+
 
 .logo-divider {
     display: flex;
@@ -13,47 +80,128 @@
 }
 
 .company-info {
-    text-align: center;
-    margin-bottom: 40px;
+    display:flex;
+    flex:1;
+    text-align: left;
+    margin-bottom: 0px;
+    width: 100%;
+    padding: 0px 0px;
+
+
+}
+.company-info-details {
+    line-height: 40px;
+    font-size: 24px;
+    padding-right:75px;
+    
 }
 
-.logo-container img {
-    max-width: 300px;
+
+.goal-info{
+    display: flex;
+    justify-content:left;
+    align-items:left;
+    text-align:left;
+    width:100%;
 }
 
-.team-info,
-.roles-info {
-    margin-bottom: 40px;
+.goal-image{
+    flex: 1;
+
+}
+.goal-info-details{
+    flex: 1;
+    margin: 0px 25px;
+    line-height: 60px;
+    font-size: 24px;
+
 }
 
-.team-info-details {
-    display: inline-block;
-    background-color: aqua;
-    margin-bottom: 40px;
-    width: 400px;
-}
+
+
 
 
 .team-members {
     display: flex;
+    position: relative;
+    width:fit-content;
+    padding: 20px;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
 }
 
-.roles-info {
-    display: flex;
-    flex-direction: row;
-    column-gap: 70px;
+.card{
+    position: flex;
+    width: 200px;
+    height: 260px;
+    padding: 10px 20px;
+    transform-style: preserve-3d;
+    transition: all 2s ease;
 }
+
+
+.cardFlipped{
+    position: flex;
+    width: 200px;
+    height: 260px;
+    padding: 10px 20px;
+    transform-style: preserve-3d;
+    transition: all 2s ease;
+    transform: rotateY(180deg);
+}
+
+
 .team-member {
-    display: flex;
+    position: absolute;
+    width: 200px;
+    height: 260px;
+    background: #fff;
+    border-radius: 5px;
+    transform: rotateY(180deg);
     flex-direction: column;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    background: linear-gradient(to top, green, yellow, yellow, green);
+    animation: wave 4s ease-in-out infinite; 
 }
 
+@keyframes wave {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 0 -10px; 
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
 .team-member img {
-    width: 70px;
-    height: 120px;
-    border-end-start-radius: 50%;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    margin-bottom: 10px;
+    position: relative;
+    width: 100%;
+    height: 70%;
+    border-bottom-right-radius: 5%;
+    border-bottom-left-radius: 5%;
+}
+.team-member-name{
+    margin-top: -15px;
+    font-size: 18px;
+    font-weight: bolder;
+    color:#2D5E4A;
+    text-align: center;
+}
+.team-member-detail{
+    text-align: center;
+    font-size: 0.75rem;  
+    color: #fff;  
+}
+.backOfCard{
+    position: absolute;
+    width: 200px;
+    height: 260px;
+    border-radius: 5px;
+    color:#6EFF29;
+    backface-visibility: hidden;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    flex-direction: column;
 }
