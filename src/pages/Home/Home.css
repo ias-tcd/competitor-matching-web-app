@@ -76,7 +76,6 @@ body {
 
 .media-type-button,
 .upload-button,
-.cancel-button,
 .text-uploader-button,
 .upload-button.dialog,
 .text-uploader-button {
@@ -91,50 +90,59 @@ body {
     outline: none !important;
 }
 
+.cancel-button {
+    margin: 0 10px;
+    padding: 12px 20px;
+    background-color: rgba(248, 248, 248, 0.781);
+    color: black;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    outline: none !important;
+}
+
+.cancel-button:hover {
+    background-color: #909090;
+}
+
 .media-type-button:hover,
 .upload-button:hover,
-.cancel-button:hover,
 .text-uploader-button:hover .upload-button.dialog:hover,
-.cancel-button:hover,
 .text-uploader-button:hover {
     background-color: #292929;
     color: #1ed70d;
 }
 
-.brand-checkbox {
+.image-container {
+    display: flex;
+    flex-direction: row;
+    border-style: dotted;
+    border-color: gray;
     margin-top: 10px;
+    max-width: 600px;
+    overflow-x: auto;
+}
+
+.delete-icon:hover {
+    transform: scale(1.2);
+}
+
+.brand-checkbox {
+    margin-top: 35px;
     margin-bottom: 10px;
 }
 
 #Nike {
     position: relative;
-    left: -9px;
     margin-bottom: 15px;
 }
-#Lululemon {
-    position: relative;
-    left: -11px;
-}
-
+#Lululemon,
 #Adidas,
-#Reebok {
-    position: relative;
-}
-
-#Puma {
-    position: relative;
-    left: 17px;
-}
-#North-Face {
-    position: relative;
-    left: 10px;
-}
-
-#New-Balance {
-    position: relative;
-    left: 24px;
-}
+#Reebok,
+#Puma,
+#North-Face,
+#New-Balance,
 #Under-Armor {
     position: relative;
-    left: 15px;
 }
