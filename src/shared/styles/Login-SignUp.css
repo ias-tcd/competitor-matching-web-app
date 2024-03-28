@@ -30,8 +30,6 @@
     z-index: 2;
 }
 
-<<<<<<< Updated upstream
-=======
 .error-message {
     color: rgba(239, 71, 20, 0.858);
     font-size: 0.9rem;
@@ -40,7 +38,6 @@
     z-index: 2;
 }
 
->>>>>>> Stashed changes
 ::placeholder {
     color: #fff;
     z-index: 2;
