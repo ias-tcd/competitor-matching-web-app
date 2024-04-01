@@ -1,4 +1,3 @@
-import Navbar from '../../components/NavBar/NavBar';
 import './AboutUs.css';
 import { useState, useEffect, useRef } from 'react';
 import teamImg from '../../assets/team.jpg';
@@ -34,7 +33,7 @@ const AboutUs = () => {
     ];
 
     const [flippedIndex, setFlippedIndex] = useState(-1); // State to keep track of which card to flip
-    const cardRef = useRef(null);
+    const cardRef = useRef<HTMLDivElement>(null);
     const cardsCount = 11; // Number of cards
 
     useEffect(() => {
@@ -64,7 +63,6 @@ const AboutUs = () => {
 
     return (
         <>
-            <Navbar />
             <div className='about-us'>
                 <div className='about-us-bg'>
                     <div className='about-us-image'>

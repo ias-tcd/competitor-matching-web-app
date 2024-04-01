@@ -1,8 +1,8 @@
 import { useState } from 'react';
+import logo from '../../assets/Integral_Ad_Science_Logo_.jpg'
 import ImageUploader from '../../components/ImageUploader/ImageUploader';
 import TextUploader from '../../components/TextUploader/TextUploader';
 import VideoUploader from '../../components/VideoUploader/VideoUploader';
-import Navbar from '../../components/NavBar/NavBar';
 import './Home.css';
 
 function Home(): JSX.Element {
@@ -23,16 +23,15 @@ function Home(): JSX.Element {
 
     return (
         <div id='root'>
-            <Navbar />
             <div className='web-brand'>
-                <h1>IAS</h1>
+                <img src={logo} style={{height:100, width:200, mixBlendMode:'color-burn'}}/>
             </div>
-            <p>
+            <p style={{fontSize:24}}>
                 Discover the power of brand recognition with IAS – the ultimate competitor-matching web app. Seamlessly
                 identify brands within your content and elevate your media intelligence to new heights.
             </p>
             <div id='userInput'>
-                <p>Choose the type of media you want to upload:</p>
+                <p style={{fontSize:20}}>Choose the type of media you want to upload:</p>
             </div>
             <div id='buttons' className='media-type-options'>
                 <button className='media-type-button' data-type='Text' onClick={() => openDialog('Text')}>
@@ -82,3 +81,4 @@ function Home(): JSX.Element {
 }
 
 export default Home;
+

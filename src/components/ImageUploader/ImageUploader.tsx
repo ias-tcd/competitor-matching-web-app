@@ -17,7 +17,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose, setFileNames }) 
     const [images, setImages] = useState<ImageState[]>([]);
     const [fileList, setFileList] = useState<FileList | null>(null);
     const [showWarning, setShowWarning] = useState(false);
-    const [checkedBrands, setCheckedBrands] = useState([]);
+    const [checkedBrands, setCheckedBrands] = useState<string[]>([]);
     const [showBrandWarning, setShowBrandWarning] = useState(false);
 
     const api = UseAxios();
@@ -34,12 +34,13 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose, setFileNames }) 
             setImages(prevImages => [...prevImages, ...newImages]);
             if (images.length === 1) {
                 setShowWarning(false);
+                setFileList(null);
             }
         }
     };
 
     const handleUpload = async () => {
-        if (images.length !== 0 && checkedBrands.length > 1) {
+        if ((images.length !== 0 || fileList)&& checkedBrands.length > 0) {
             setShowWarning(false);
             let success = false;
             const formData = new FormData();
@@ -58,8 +59,9 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose, setFileNames }) 
                 setShowWarning(true);
             } else {
                 setShowBrandWarning(true);
-            }
+            }  
         }
+        
     };
 
     const handleCheckboxChange = (e: { target: { value: any; checked: any; }; }) => {
@@ -105,11 +107,10 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose, setFileNames }) 
                             onClick={() => deleteImage(index)}
                         />
                         <img
-                            src={image.url}
                             key={index}
+                            src={image.url}
                             alt={image.alt}
                             style={{ width: '100px', margin: '10px', position: 'relative', display: 'flex' }}
-                            className='images'
                         />
                     </div>
                 ))}
@@ -185,7 +186,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose, setFileNames }) 
             </div>
             {showWarning && <p style={{ display: 'block', color: 'red' }}>Please select an image(s)</p>}
             {showBrandWarning && <p style={{ display: 'block', color: 'red' }}>Please select a brand(s)</p>}
-            {/*<p>Checked brands: {checkedBrands.join(', ')}</p>*/}
+            <p>Checked brands: {checkedBrands.join(', ')}</p>
             <button className='upload-button' onClick={handleUpload}>
                 Upload Images
             </button>

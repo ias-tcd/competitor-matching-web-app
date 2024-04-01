@@ -1,19 +1,26 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Home from '../Home/Home.tsx';
 import LoginPage from '../Login/LoginPage.tsx';
 import SignUpPage from '../SignUp/SignUpPage.tsx';
 import AboutUs from '../AboutUs/AboutUs.tsx';
+import AuthProvider from '../../context/AuthProvider.tsx';
+import AuthGuard from '../../utils/AuthGuard.tsx';
+import NavBar from '../../components/NavBar/NavBar.tsx';
 
 function App(): JSX.Element {
     return (
-        <Router>
+    <AuthProvider>
+        <NavBar />
             <Routes>
-                <Route path='/' element={<Home />} />
+                 <Route element={<AuthGuard />}>
+                    <Route path='/' element={<Home />} />
+                </Route>
                 <Route path='/about' element={<AboutUs />} />
                 <Route path='/login' element={<LoginPage />} />
                 <Route path='/signUp' element={<SignUpPage />} />
             </Routes>
-        </Router>
+    </AuthProvider>
+
     );
 }
 
