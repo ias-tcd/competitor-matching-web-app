@@ -50,22 +50,20 @@ h2 {
     z-index: 2;
 }
 
-.wrapper{
+.wrapper {
     border-style: solid;
-    border-color: rgba(127,195,95,0.6);
+    border-color: rgba(127, 195, 95, 0.6);
     padding: 20px 40px;
     border-radius: 1%;
-    background-color: rgba(217, 217, 217,0.2);
-    filter:drop-shadow(50px);
-    display:flex;
+    background-color: rgba(217, 217, 217, 0.2);
+    filter: drop-shadow(50px);
+    display: flex;
     box-sizing: border-box;
-    position: relative ;
+    position: relative;
     align-items: center;
     justify-content: center;
     overflow: hidden;
 }
-
-
 
 form {
     display: flex;
@@ -106,12 +104,12 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ;
+    transition: background-color 0.3s;
     margin-top: 10px;
 }
 
 button:hover {
-    background-color: #207F30;
+    background-color: #207f30;
     color: rgb(0, 0, 0);
 }
 
