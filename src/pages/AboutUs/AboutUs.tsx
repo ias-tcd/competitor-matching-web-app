@@ -11,9 +11,9 @@ import TemiPic from '../../assets/Team Members/Temi.jpeg';
 import TuathalPic from '../../assets/Team Members/Tuathal.jpeg';
 import DarraghPic from '../../assets/Team Members/Darragh.jpeg';
 import FintanPic from '../../assets/Team Members/Fintan.jpeg';
-//import HannaPic from '../../assets/Team Members/Sam.jpeg'
-//import PengPic from '../../assets/Team Members/Sam.jpeg'
-//import BeniPic from '../../assets/Team Members/Sam.jpeg'
+import HannaPic from '../../assets/Team Members/Hanna.jpg'
+import PengPic from '../../assets/Team Members/Peng.jpg'
+import BeniPic from '../../assets/Team Members/Beni.jpeg'
 
 import goal from '../../assets/TheGoal.webp';
 
@@ -23,12 +23,12 @@ const AboutUs = () => {
         { name: 'Eva', role: 'API Team', Pic: EvaPic, position: 'Defender,Midfield,Attacker' },
         { name: 'Darragh', role: 'Model Team', Pic: DarraghPic, position: 'Defender,Midfield,Attacker' },
         { name: 'Amy', role: 'UI Designer', Pic: AmyPic, position: 'Defender,Midfield,Attacker' },
-        { name: 'Temi', role: 'Data Team', Pic: TemiPic, position: 'Defender,Midfield,Attacker' },
-        { name: 'Beni', role: 'UI Designer', Pic: logo, position: 'Defender,Midfield,Attacker' },
+        { name: 'Temi', role: 'Data Manager', Pic: TemiPic, position: 'Defender,Midfield,Attacker' },
+        { name: 'Beni', role: 'UI Designer', Pic: BeniPic, position: 'Defender,Midfield,Attacker' },
         { name: 'Dhruv', role: 'API Team', Pic: DhruvPic, position: 'Defender,Midfield,Attacker' },
-        { name: 'Hanna', role: 'Model Team', Pic: logo, position: 'Defender,Midfield,Attacker' },
+        { name: 'Hanna', role: 'Model Team', Pic: HannaPic, position: 'Defender,Midfield,Attacker' },
         { name: 'Tuathal', role: 'Data Team', Pic: TuathalPic, position: 'Defender,Midfield,Attacker' },
-        { name: 'Peng', role: 'Model Team', Pic: logo, position: 'Defender,Midfield,Attacker' },
+        { name: 'Peng', role: 'Model Team', Pic: PengPic, position: 'Defender,Midfield,Attacker' },
         { name: 'Fintan', role: 'Data Team', Pic: FintanPic, position: 'Defender,Midfield,Attacker' },
     ];
 
