@@ -6,6 +6,7 @@ import AboutUs from '../AboutUs/AboutUs.tsx';
 import AuthProvider from '../../context/AuthProvider.tsx';
 import AuthGuard from '../../utils/AuthGuard.tsx';
 import NavBar from '../../components/NavBar/NavBar.tsx';
+import Game from '../Game/Game.tsx';
 
 function App(): JSX.Element {
     return (
@@ -16,6 +17,7 @@ function App(): JSX.Element {
                     <Route path='/' element={<Home />} />
                 </Route>
                 <Route path='/about' element={<AboutUs />} />
+                <Route path='/game' element={<Game />} />
                 <Route path='/login' element={<LoginPage />} />
                 <Route path='/signUp' element={<SignUpPage />} />
             </Routes>

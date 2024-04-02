@@ -161,13 +161,13 @@ const Game = () => {
   return (
     <div className="container">
       <div className="scoreboard">
-        <p>Time Left:<span style={{color:'#f1356d'}}>{timeLeft} seconds</span></p>
-        <p>Score: <span className={guessStatus === 'correct' ? 'score-correct' : guessStatus === 'incorrect' ? '' : ''}>
+        <p style={{color:'black'}}>Time Left: <span style={{color:'#f1356d'}}>{timeLeft} seconds</span></p>
+        <p style={{color:'black'}}>Score: <span className={guessStatus === 'correct' ? 'score-correct' : guessStatus === 'incorrect' ? '' : ''}>
         {score}
         </span>
         </p>
       </div>
-       <div className="high-score">High Score: {highScore}</div>
+       <div className="high-score"><span style={{color:'black'}}>High Score:</span> {highScore}</div>
       <div>
         <img className="brand-logo" src={currentBrand.logo} alt="Brand Logo" style={{width:300, height:300}} />
       </div>

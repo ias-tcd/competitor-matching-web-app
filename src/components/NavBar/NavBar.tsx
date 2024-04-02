@@ -5,7 +5,7 @@ import { IoIosInformationCircleOutline } from 'react-icons/io';
 import logo from '../../assets/IAS-logo.png';
 import { FaUserCircle } from "react-icons/fa";
 import AuthContext from '../../context/AuthContext';
-import { IoLogOutOutline } from "react-icons/io5";
+import { IoLogOutOutline,IoGameController } from "react-icons/io5";
 
 const DropdownMenu = ({ userFirstName, userLastName, onLogout }) => {
     return (
@@ -39,17 +39,19 @@ const Navbar = () => {
         <div className='navbar-container'>
             <div className='navbar'>
                 <div className='nav-brand'>
+             <a href='/'>
                     <img src={logo} alt='ias' className='nav-brand-img' />
+             </a>
                 </div>
                 <ul className='nav-links'>
                     <li>
-                        <a href='/'>
-                            Home <FaHome />
+                        <a href='/about'>
+                            About <IoIosInformationCircleOutline />
                         </a>
                     </li>
                     <li>
-                        <a href='/about'>
-                            About <IoIosInformationCircleOutline />
+                        <a href='/game'>
+                            Game <IoGameController />
                         </a>
                     </li>
                     {isLoggedIn ? (
