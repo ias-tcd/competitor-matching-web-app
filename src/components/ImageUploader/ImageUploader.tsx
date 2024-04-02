@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import UseAxios from '../../utils/UseAxios';
 import { TiDeleteOutline } from 'react-icons/ti';
+import { useNavigate } from 'react-router-dom';
 
 interface ImageState {
     url: string;
@@ -20,6 +21,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose, setFileNames }) 
     const [checkedBrands, setCheckedBrands] = useState<string[]>([]);
     const [showBrandWarning, setShowBrandWarning] = useState(false);
 
+    const navigate = useNavigate();
     const api = UseAxios();
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -40,7 +42,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose, setFileNames }) 
     };
 
     const handleUpload = async () => {
-        if ((images.length !== 0 || fileList)&& checkedBrands.length > 0) {
+        if ((images.length !== 0 || fileList) && checkedBrands.length > 0) {
             setShowWarning(false);
             let success = false;
             const formData = new FormData();
@@ -49,6 +51,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose, setFileNames }) 
                 const { data } = await api.post('/images/predictions/', formData);
                 setFileNames(data?.images);
                 success = true;
+                navigate('/results');
             } catch (err) {
                 console.error(err);
             }
@@ -59,12 +62,11 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose, setFileNames }) 
                 setShowWarning(true);
             } else {
                 setShowBrandWarning(true);
-            }  
+            }
         }
-        
     };
 
-    const handleCheckboxChange = (e: { target: { value: any; checked: any; }; }) => {
+    const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const brand = e.target.value;
         if (e.target.checked) {
             setCheckedBrands(prevCheckedBrands => [...prevCheckedBrands, brand]);

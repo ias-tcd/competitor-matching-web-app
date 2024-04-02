@@ -13,3 +13,33 @@ export interface Tokens {
     access: string;
     refresh: string;
 }
+
+export interface BBox {
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+}
+
+export interface Detection {
+    bbox: BBox;
+    confidence: number;
+}
+
+export interface Analysis {
+    id: string;
+    image: string;
+    user: string;
+    detections: { [imageSource: string]: Detection[] };
+}
+
+export interface ImageAnalysis {
+    image: {
+        id: string;
+        source: string;
+        user: string;
+    };
+    analysis: Analysis;
+}
+
+export type DetectionResults = ImageAnalysis[];
