@@ -46,12 +46,12 @@ const Navbar = () => {
                 <ul className='nav-links'>
                     <li>
                         <a href='/about'>
-                            About <IoIosInformationCircleOutline />
+                            About <IoIosInformationCircleOutline style={{position:'relative' ,top:2.9}} />
                         </a>
                     </li>
                     <li>
                         <a href='/game'>
-                            Game <IoGameController />
+                            Game <IoGameController style={{position:'relative' ,top:2.9}}/>
                         </a>
                     </li>
                     {isLoggedIn ? (

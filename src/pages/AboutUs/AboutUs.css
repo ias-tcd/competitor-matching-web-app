@@ -89,9 +89,15 @@
     margin-bottom: 0px;
     width: 100%;
     padding: 0px 0px;
-
-
-}
+    scale: .8; opacity: 0;
+    animation: fade-in linear;
+    animation-timeline:view();
+animation-range-start: -150px;
+        animation-range-end: 1050px;}
+@keyframes fade-in {
+    50% {scale:1; opacity:1;}
+    100% {scale:0.8; opacity:0}
+    }
 .company-info-details {
     line-height: 40px;
     font-size: 24px;
@@ -106,6 +112,17 @@
     align-items:left;
     text-align:left;
     width:100%;
+   scale: .8; opacity: 0;
+    animation: fade-in2 linear;
+    animation-timeline:view();
+    animation-range-start: -150px;
+    animation-range-end: 1040px;
+
+
+}
+@keyframes fade-in2 {
+    50% {scale:1; opacity:1;}
+    100% {scale:0.8; opacity:0}
 }
 
 .goal-image{
@@ -132,6 +149,15 @@
     justify-content:center;
     align-items:center;
     flex-wrap:wrap;
+      scale: .8;
+    animation: fade-in3 linear;
+    animation-timeline:view();
+    animation-range-start: 0px;
+
+
+}
+@keyframes fade-in3 {
+    100% {scale:1;}
 }
 
 .card{

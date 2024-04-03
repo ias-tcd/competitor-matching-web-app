@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 .navbar {
     position: fixed;
     top: 0;
@@ -28,6 +30,8 @@
 .nav-links li a {
     color: #fff;
     text-decoration: none;
+    font-size: larger;
+    font-family: 'Quicksand';
 }
 
 .nav-links li a:hover {
@@ -46,8 +50,8 @@
 
 .nav-brand-img {
     display: flex;
-    height: 50px;
-    width: 100px;
+    height: 75px;
+    width: 150px;
 }
 
 .navbar-container {
@@ -57,9 +61,8 @@
 
 .dropdown-menu {
     position: fixed;
-   
     display: inline;
-     top: 70px; 
+    top: 70px; 
     right: 5px;
     background-color: rgb(31, 27, 27);
     border: 1px solid #ccc;

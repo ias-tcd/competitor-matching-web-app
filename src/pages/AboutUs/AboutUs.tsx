@@ -60,6 +60,7 @@ const AboutUs = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+    
 
     return (
         <>
@@ -106,7 +107,7 @@ const AboutUs = () => {
                         competitor exposure and resource drain for our clients.
                     </p>
                 </div>
-                <h2 style={{ fontSize: 48, paddingBottom: 50 }}>Meet the Team</h2>
+                <h2 style={{ fontSize: 48, paddingBottom: 0, display:'block' }}>Meet the Team</h2>
                 <div ref={cardRef} className='team-members'>
                     {cardData.map((data, index) => (
                         <div key={index} className={`card${index <= flippedIndex ? 'Flipped' : ''}`}>
