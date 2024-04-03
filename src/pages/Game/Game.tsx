@@ -88,7 +88,7 @@ const Game = () => {
   const [currentBrand, setCurrentBrand] = useState("");
   const [userGuess, setUserGuess] = useState('');
   const [score, setScore] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(30);
+  const [timeLeft, setTimeLeft] = useState(60);
   const [highScore, setHighScore] = useState(
     localStorage.getItem('highScore') || 0
   );
@@ -133,7 +133,7 @@ const Game = () => {
 
   const resetGame = () => {
     setScore(0);
-    setTimeLeft(30);
+    setTimeLeft(60);
     setCurrentBrand(chooseRandomBrand());
   };
 

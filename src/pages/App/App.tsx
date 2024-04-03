@@ -6,7 +6,7 @@ import AboutUs from '../AboutUs/AboutUs.tsx';
 import AuthProvider from '../../context/AuthProvider.tsx';
 import AuthGuard from '../../utils/AuthGuard.tsx';
 import NavBar from '../../components/NavBar/NavBar.tsx';
-import Game from '../Game/Game.tsx';
+import Game from '../Game/GameApp.tsx';
 
 function App(): JSX.Element {
     return (

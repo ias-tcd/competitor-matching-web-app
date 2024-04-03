@@ -64,18 +64,17 @@ const AboutUs = () => {
 
     return (
         <>
+        <div id='root'>
             <div className='about-us'>
                 <div className='about-us-bg'>
                     <div className='about-us-image'>
                         <img src={teamImg} alt='Company Logo' className='team-image' />
-                        <div className='about-us-title'>
-                            <h1>About Us</h1>
-                            <p className='underline'>
-                                -----------------------------------------------------------------
-                            </p>
-                        </div>
                     </div>
                 </div>
+                        <div className='about-us-title'>
+                            <h1>About Us</h1>
+                            
+                        </div>
                 <div className='company-info'>
                     <p className='company-info-details'>
                         <h1 style={{ fontSize: 48, paddingBottom: 50, color: '#6EFF29' }}>
@@ -90,12 +89,12 @@ const AboutUs = () => {
                     <img
                         src={logo}
                         alt='Company Logo'
-                        style={{ height: 500, width: '25.65%', mixBlendMode: 'overlay' }}
+                        style={{ height: 500, width: '22.65%', mixBlendMode: 'overlay' }}
                     />
                     <img
                         src={trinityLogo}
                         alt='Trinity College Logo'
-                        style={{ height: 500, width: '25.65%', mixBlendMode: 'overlay' }}
+                        style={{ height: 500, width: '22.65%', mixBlendMode: 'overlay', paddingRight:50 }}
                     />
                 </div>
                 <div className='goal-info' style={{}}>
@@ -127,6 +126,7 @@ const AboutUs = () => {
                     ))}
                 </div>
             </div>
+          </div>
         </>
     );
 };
