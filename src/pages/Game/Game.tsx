@@ -89,6 +89,7 @@ const Game = () => {
   const [userGuess, setUserGuess] = useState('');
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(60);
+    const [guessedBrands, setGuessedBrands] = useState([]);
   const [highScore, setHighScore] = useState(
     localStorage.getItem('highScore') || 0
   );
@@ -114,13 +115,18 @@ const Game = () => {
   }, []);
 
   const chooseRandomBrand = () => {
-    return brands[Math.floor(Math.random() * brands.length)];
+let randomBrand;
+    do {
+      randomBrand = brands[Math.floor(Math.random() * brands.length)];
+    } while (guessedBrands.includes(randomBrand)); // Ensure the brand is not in guessedBrands
+    return randomBrand;
   };
-
+  
   const handleGuess = () => {
         if (userGuess.toLowerCase() === currentBrand.name.toLowerCase()) {
             setScore(score + 1);
             setUserGuess('');
+                  setGuessedBrands([...guessedBrands, currentBrand]);
             setCurrentBrand(chooseRandomBrand());
             setGuessStatus('correct');
             setTimeout(() => setGuessStatus(''), 1000); // Reset guess status after 1 second
@@ -134,6 +140,7 @@ const Game = () => {
   const resetGame = () => {
     setScore(0);
     setTimeLeft(60);
+        setGuessedBrands([]);
     setCurrentBrand(chooseRandomBrand());
   };
 
@@ -174,6 +181,7 @@ const Game = () => {
       <div>
         <input
           type="text"
+          id='gameInput'
           placeholder="Identify the brand"
           value={userGuess}
           onChange={(e) => setUserGuess(e.target.value)}

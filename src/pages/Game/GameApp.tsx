@@ -30,12 +30,6 @@ const App = () => {
       ) : (
         <Menu startGame={startGame} />
       )}
-      {showRestartPrompt && (
-        <RestartPrompt
-          onRestart={restartGame}
-          onClose={closeRestartPrompt}
-        />
-      )}
     </div>
   );
 };

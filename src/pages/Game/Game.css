@@ -24,7 +24,7 @@ display: flex;
   background-color: beige;
 }
 
-input {
+input#gameInput {
   padding: 10px;
   margin-right: 10px;
   margin-bottom: 0px;
@@ -35,7 +35,7 @@ input {
   transition: border-color 0.3s ease, box-shadow 0.3s ease; 
 }
 
-input:focus {
+input#gameInput:focus {
   outline: none;
   border-color: #0a0e0b; 
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
@@ -78,8 +78,8 @@ button:hover {
 
 .high-score {
   position: relative;
-  top: -140px; /* Adjust as needed */
-  right: -300px; /* Adjust as needed */
+  top: -140px; 
+  right: -300px; 
   background-color: rgba(255, 255, 255, 0.7);
   padding: 5px 10px;
   border-radius: 5px;
