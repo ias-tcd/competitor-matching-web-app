@@ -2,14 +2,14 @@
 
 
 .container {
-display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin-top: 40px;
   height: 90vh;
   width: 50vw;
-  background: linear-gradient(180deg, #09f524, #aedeb2, #377633);
+  background: linear-gradient(180deg, #335e38, #aedeb2, #335e38);
   border-style: solid;
   border-color: black;
   border-radius: 5px;
@@ -17,7 +17,7 @@ display: flex;
 }
 
 .brand-logo {
-    margin-top: 20px;
+  margin-top: 20px;
   margin-bottom: 10px;
   border-style: solid;
   border-color: #06d21e;
