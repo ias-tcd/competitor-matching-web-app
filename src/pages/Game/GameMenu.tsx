@@ -9,7 +9,7 @@ const InstructionDialog = ({ onClose }) => {
       <div className="modal-content">
         <span className="close" onClick={onClose}>&times;</span>
         <h2>How to Play</h2>
-        <p style={{fontSize:18, lineHeight:2}}>Welcome to the game!<br></br> The objective is to identify the brand logo displayed on the screen.<br></br> Type your guess in the input box and press Enter.<br></br> If your guess is correct, your score will increase.<br></br> You have 60 seconds to guess as many logos as you can.<br></br> Good luck!</p>
+        <p style={{fontSize:18, lineHeight:2}}><br></br>The objective is to identify the brand logo displayed on the screen.<br></br> Type your guess in the input box and press Enter.<br></br> If your guess is correct, your score will increase.<br></br> You have 60 seconds to guess as many logos as you can.<br></br><br></br><span style={{background: 'linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff)',backgroundClip: 'text',WebkitTextFillColor: 'transparent'}}>Good luck!</span></p>
       </div>
     </div>
   );
