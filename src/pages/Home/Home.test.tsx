@@ -1,20 +1,36 @@
-import { render, screen, RenderResult, fireEvent } from '@testing-library/react';
+import { render, screen, RenderResult, fireEvent, act } from '@testing-library/react';
 import Home from './Home';
+import AuthContext from '../../context/AuthContext';
+import { DetectionProvider } from '../../context/DetectionProvider';
+import { MemoryRouter } from 'react-router-dom';
+import context from '../../context/__mocks__/AuthContext';
 
 describe('testing the Home component', () => {
     let renderResult: RenderResult;
 
-    beforeEach(() => {
-        renderResult = render(<Home />);
+    beforeEach(async () => {
+        await act(async () => {
+            renderResult = render(
+                <AuthContext.Provider value={context}>
+                    <DetectionProvider>
+                        <MemoryRouter>
+                            <Home />
+                        </MemoryRouter>
+                    </DetectionProvider>
+                </AuthContext.Provider>,
+            );
+        });
     });
 
     it('renders the Home component', () => {
         expect(renderResult).not.toBeNull();
     });
 
-    it('should include IAS in the title', () => {
-        const header = document.querySelector('h1');
-        expect(header?.textContent?.includes('IAS')).toBeTruthy();
+    it('should render an image of the IAS logo', () => {
+        const logoContainer = screen.getByTestId('logo-container');
+        expect(logoContainer).not.toBeNull();
+        const image = logoContainer?.firstChild;
+        expect(image?.nodeName).toEqual('IMG');
     });
 
     it('should prompt the user to upload a piece of media', () => {

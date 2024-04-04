@@ -23,7 +23,7 @@ function Home(): JSX.Element {
 
     return (
         <div id='root'>
-            <div className='web-brand'>
+            <div className='web-brand' data-testid='logo-container'>
                 <img src={logo} style={{ height: 100, width: 200, mixBlendMode: 'color-burn' }} />
             </div>
             <p style={{ fontSize: 24 }}>

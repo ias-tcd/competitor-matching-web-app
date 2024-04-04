@@ -17,7 +17,6 @@ interface ImageUploaderProps {
 
 const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose }) => {
     const [images, setImages] = useState<ImageState[]>([]);
-    const [, setFileList] = useState<FileList | null>(null);
     const [showWarning, setShowWarning] = useState(false);
     const [checkedBrands, setCheckedBrands] = useState<string[]>([]);
     const [showBrandWarning, setShowBrandWarning] = useState(false);
@@ -28,7 +27,6 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose }) => {
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         if (e.target.files) {
-            setFileList(e.target.files);
             setShowWarning(false);
             const newImages = Array.from(e.target.files).map((file, index) => ({
                 url: URL.createObjectURL(file),
@@ -38,7 +36,6 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose }) => {
             setImages(prevImages => [...prevImages, ...newImages]);
             if (images.length === 1) {
                 setShowWarning(false);
-                setFileList(null);
             }
         }
     };
@@ -80,7 +77,6 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose }) => {
 
     const handleCancel = () => {
         setImages([]);
-        setFileList(null);
         onClose();
     };
 
@@ -88,7 +84,13 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose }) => {
         <div className='dialog-container'>
             <p style={{ marginBottom: -15 }}>Upload Multiple images along with the</p>
             <p>brands you would like us to detect:</p>
-            <input type='file' accept='image/*' multiple onChange={handleFileChange} />
+            <input
+                type='file'
+                accept='image/*'
+                multiple
+                onChange={handleFileChange}
+                data-testid='image-uploader-input'
+            />
             <p>Total Images: {images.length}</p>
             <div className='image-container'>
                 {images.map((image, index) => (
