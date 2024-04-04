@@ -17,7 +17,7 @@ interface ImageUploaderProps {
 
 const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose }) => {
     const [images, setImages] = useState<ImageState[]>([]);
-    const [,setFileList] = useState<FileList | null>(null);
+    const [, setFileList] = useState<FileList | null>(null);
     const [showWarning, setShowWarning] = useState(false);
     const [checkedBrands, setCheckedBrands] = useState<string[]>([]);
     const [showBrandWarning, setShowBrandWarning] = useState(false);
@@ -48,21 +48,21 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose }) => {
             setShowWarning(false);
             const formData = new FormData();
             images.forEach((image, index) => formData.append(`images[${index}]`, image.file));
-    
+
             try {
                 const { data } = await api.post('/images/predictions/', formData);
                 setDetectionResults(data);
                 navigate('/results');
             } catch (err) {
                 console.error('Upload failed:', err);
-                alert('Failed to upload images. Please try again.'); 
+                alert('Failed to upload images. Please try again.');
             }
         } else {
             setShowWarning(images.length === 0);
             setShowBrandWarning(checkedBrands.length === 0);
         }
     };
-    
+
     const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const brand = e.target.value;
         if (e.target.checked) {

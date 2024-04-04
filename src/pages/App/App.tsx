@@ -11,21 +11,20 @@ import { DetectionProvider } from '../../context/DetectionProvider.tsx';
 
 function App(): JSX.Element {
     return (
-    <AuthProvider>
-        <NavBar />
-        <DetectionProvider>
-            <Routes>
-                 <Route element={<AuthGuard />}>
-                    <Route path='/' element={<Home />} />
-                </Route>
-                <Route path='/results' element={<ResultsPage />} />
-                <Route path='/about' element={<AboutUs />} />
-                <Route path='/login' element={<LoginPage />} />
-                <Route path='/signUp' element={<SignUpPage />} />
-            </Routes>
-        </DetectionProvider>
-    </AuthProvider>
-
+        <AuthProvider>
+            <NavBar />
+            <DetectionProvider>
+                <Routes>
+                    <Route element={<AuthGuard />}>
+                        <Route path='/' element={<Home />} />
+                    </Route>
+                    <Route path='/results' element={<ResultsPage />} />
+                    <Route path='/about' element={<AboutUs />} />
+                    <Route path='/login' element={<LoginPage />} />
+                    <Route path='/signUp' element={<SignUpPage />} />
+                </Routes>
+            </DetectionProvider>
+        </AuthProvider>
     );
 }
 

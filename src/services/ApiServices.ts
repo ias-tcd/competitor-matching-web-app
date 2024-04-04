@@ -3,8 +3,8 @@ import { DetectionResults } from '../types/interfaces';
 import { transformDataToMatchExpectedFormat } from '../utils/TransformData';
 
 export const fetchDetectionResults = async (formData: FormData): Promise<DetectionResults> => {
-    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:8000'; 
-    const fullUrl = `${apiUrl}/images/predictions`; 
+    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:8000';
+    const fullUrl = `${apiUrl}/images/predictions`;
     console.log(`Making request to: ${fullUrl}`);
     try {
         const response = await axios.post(fullUrl, formData, {
