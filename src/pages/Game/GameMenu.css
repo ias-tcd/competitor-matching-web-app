@@ -122,7 +122,7 @@
 
 @keyframes runAcrossScreen {
   0% {
-    transform: translateX(-900px);
+    transform: translateX(-550px);
   }
   100% {
     transform: translateX(calc(100vw)); 
