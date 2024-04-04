@@ -14,7 +14,7 @@ export interface Tokens {
     refresh: string;
 }
 
-export interface BoundingBox {
+export interface BBox {
     x: number;
     y: number;
     width: number;
@@ -22,28 +22,24 @@ export interface BoundingBox {
 }
 
 export interface Detection {
-    bbox: BoundingBox;
+    bbox: BBox;
     confidence: number;
-}
-
-export interface Detections {
-    [key: string]: Detection[];
 }
 
 export interface Analysis {
     id: string;
     image: string;
     user: string;
-    detections: Detections;
-}
-
-export interface Image {
-    id: string;
-    source: string;
-    user: string;
+    detections: { [key: string]: Detection[] };
 }
 
 export interface ImageAnalysis {
-    image: Image;
+    image: {
+        id: string;
+        source: string;
+        user: string;
+    };
     analysis: Analysis;
 }
+
+export type DetectionResults = ImageAnalysis[];

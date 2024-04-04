@@ -4,12 +4,12 @@
     left: 0;
     width: 100%;
     justify-content: space-between;
-    background-color: rgba(32, 32, 32);
+    background-color: rgba(0, 0, 0);
     color: #fff;
     padding: 0.6rem;
     z-index: 1;
     display: flex;
-    align-items: baseline;
+    align-items: center;
 }
 
 .nav-links {
@@ -56,4 +56,10 @@
     font-weight: bold;
     font-size: 1.5rem;
     margin-right: 3rem;
+}
+
+.nav-brand-img {
+    display: flex;
+    height: 50px;
+    width: 100px;
 }

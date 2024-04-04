@@ -3,9 +3,10 @@ import ImageUploader from './ImageUploader';
 import { vi } from 'vitest';
 import AuthContext from '../../context/AuthContext';
 import context from '../../context/__mocks__/AuthContext';
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
+import { DetectionProvider } from '../../context/DetectionProvider';
 
 describe('testing the ImageUploader component', () => {
     const onClose = vi.fn();
@@ -16,9 +17,11 @@ describe('testing the ImageUploader component', () => {
         await act(async () => {
             render(
                 <AuthContext.Provider value={context}>
-                    <BrowserRouter>
-                        <ImageUploader onClose={onClose} setFileNames={setFileNames} />
-                    </BrowserRouter>
+                    <DetectionProvider>
+                        <MemoryRouter>
+                            <ImageUploader onClose={onClose} setFileNames={setFileNames} />
+                        </MemoryRouter>
+                    </DetectionProvider>
                 </AuthContext.Provider>,
             );
         });

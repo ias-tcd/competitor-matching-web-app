@@ -1,5 +1,5 @@
 import React from 'react';
-import { BoundingBox as IBoundingBox } from '../../types/interfaces';
+import { BBox as IBoundingBox } from '../../types/interfaces';
 
 interface BoundingBoxesProps {
     image: {

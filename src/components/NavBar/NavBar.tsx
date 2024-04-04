@@ -1,6 +1,8 @@
+import './NavBar.css';
 import { useContext } from 'react';
 import { FaHome, FaUser } from 'react-icons/fa';
-import './NavBar.css';
+import { IoIosInformationCircleOutline } from 'react-icons/io';
+import logo from '../../assets/IAS-logo.png';
 import AuthContext from '../../context/AuthContext';
 
 const NavBar = () => {
@@ -9,12 +11,17 @@ const NavBar = () => {
     return (
         <div className='navbar'>
             <div className='nav-brand'>
-                <p>IAS</p>
+                <img src={logo} alt='ias' className='nav-brand-img' />
             </div>
             <ul className='nav-links'>
                 <li>
                     <a href='/'>
                         Home <FaHome />
+                    </a>
+                </li>
+                <li>
+                    <a href='/about'>
+                        About <IoIosInformationCircleOutline />
                     </a>
                 </li>
                 <li>
