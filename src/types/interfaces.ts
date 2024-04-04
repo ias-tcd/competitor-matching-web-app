@@ -19,27 +19,28 @@ export interface BBox {
     y: number;
     width: number;
     height: number;
-}
-
-export interface Detection {
+  }
+  
+  export interface Detection {
     bbox: BBox;
     confidence: number;
-}
-
-export interface Analysis {
+  }
+  
+  export interface Analysis {
     id: string;
     image: string;
     user: string;
-    detections: { [imageSource: string]: Detection[] };
-}
-
-export interface ImageAnalysis {
+    detections: { [key: string]: Detection[] };
+  }
+  
+  export interface ImageAnalysis {
     image: {
-        id: string;
-        source: string;
-        user: string;
+      id: string;
+      source: string;
+      user: string;
     };
     analysis: Analysis;
-}
-
-export type DetectionResults = ImageAnalysis[];
+  }
+  
+  export type DetectionResults = ImageAnalysis[];
+  

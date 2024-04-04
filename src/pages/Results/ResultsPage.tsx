@@ -1,38 +1,62 @@
-import React from 'react';
-import { useDetectionResults } from '../../context/DetectionResultsContext';
+import React, { useState, useEffect, useRef } from 'react';
+import { fetchDetectionResults } from '../../services/ApiServices';
+import BoundBox from '../../components/BoundBox';
 
 const ResultsPage: React.FC = () => {
-    const { detectionResults } = useDetectionResults();
+  const [detectionResults, setDetectionResults] = useState<any[]>([]); 
 
-    return (
-        <div>
-            <h1>Detection Results Overview</h1>
-            <p>
-                The results were obtained using YOLOv7, an advanced deep learning model known for its accuracy and
-                efficiency in real-time object detection. This approach is particularly useful for identifying specific
-                objects within images, making it invaluable for various applications such as surveillance, automated
-                image tagging, and more.
-            </p>
-            {detectionResults.map((result, index) => (
-                <div key={index}>
-                    <h2>Image {index + 1}</h2>
-                    <img
-                        src={result.image.source}
-                        alt={`Detection ${index + 1}`}
-                        style={{ maxWidth: '100%', height: 'auto' }}
-                    />
-                    <h3>Detections:</h3>
-                    {result.analysis.detections[result.image.source].map((detection, detIndex) => (
-                        <p key={detIndex}>
-                            Bounding Box: ({detection.bbox.x}, {detection.bbox.y}, {detection.bbox.width},{' '}
-                            {detection.bbox.height})<br />
-                            Confidence: {detection.confidence}
-                        </p>
-                    ))}
-                </div>
-            ))}
-        </div>
-    );
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const formData = new FormData(); 
+        const results = await fetchDetectionResults(formData);
+        setDetectionResults(results);
+      } catch (error) {
+        console.error('Error fetching detection results:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    <div>
+      <h1>Detection Results</h1>
+      {detectionResults.map((result, index) => {
+        const imageRef = useRef<HTMLImageElement>(null);
+        const [imageDimensions, setImageDimensions] = useState({ width: 0, height: 0 });
+
+        useEffect(() => {
+          if (imageRef.current) {
+            setImageDimensions({
+              width: imageRef.current.offsetWidth,
+              height: imageRef.current.offsetHeight,
+            });
+          }
+        }, [imageRef.current]);
+
+        return (
+          <div key={index} style={{ position: 'relative', margin: '20px' }}>
+            <img
+              ref={imageRef}
+              src={result.image.source}
+              alt={`Detection ${index + 1}`}
+              onLoad={() => {
+                if (imageRef.current) {
+                  setImageDimensions({
+                    width: imageRef.current.offsetWidth,
+                    height: imageRef.current.offsetHeight,
+                  });
+                }
+              }}
+              style={{ width: '100%', height: 'auto', maxWidth: '600px' }}
+            />
+            <BoundBox boxes={result.analysis.detections} imageDimensions={imageDimensions} />
+          </div>
+        );
+      })}
+    </div>
+  );
 };
 
 export default ResultsPage;

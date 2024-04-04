@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import UseAxios from '../../utils/UseAxios';
 import { TiDeleteOutline } from 'react-icons/ti';
 import { useNavigate } from 'react-router-dom';
+import { useDetectionResults } from '../../context/DetectionResultsContext';
 
 interface ImageState {
     url: string;
@@ -14,15 +15,16 @@ interface ImageUploaderProps {
     setFileNames: (fileNames: string[]) => void;
 }
 
-const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose, setFileNames }) => {
+const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose }) => {
     const [images, setImages] = useState<ImageState[]>([]);
-    const [fileList, setFileList] = useState<FileList | null>(null);
+    const [,setFileList] = useState<FileList | null>(null);
     const [showWarning, setShowWarning] = useState(false);
     const [checkedBrands, setCheckedBrands] = useState<string[]>([]);
     const [showBrandWarning, setShowBrandWarning] = useState(false);
 
     const navigate = useNavigate();
     const api = UseAxios();
+    const { setDetectionResults } = useDetectionResults();
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         if (e.target.files) {
@@ -42,30 +44,25 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose, setFileNames }) 
     };
 
     const handleUpload = async () => {
-        if ((images.length !== 0 || fileList) && checkedBrands.length > 0) {
+        if (images.length > 0 && checkedBrands.length > 0) {
             setShowWarning(false);
-            let success = false;
             const formData = new FormData();
-            images?.forEach((image: ImageState, index: number) => formData.append(`images[${index}]`, image?.file));
+            images.forEach((image, index) => formData.append(`images[${index}]`, image.file));
+    
             try {
                 const { data } = await api.post('/images/predictions/', formData);
-                setFileNames(data?.images);
-                success = true;
+                setDetectionResults(data);
                 navigate('/results');
             } catch (err) {
-                console.error(err);
+                console.error('Upload failed:', err);
+                alert('Failed to upload images. Please try again.'); 
             }
-            alert(`Images uploaded ${success ? '' : 'un'}successfully!`);
-            onClose();
         } else {
-            if (images.length === 0) {
-                setShowWarning(true);
-            } else {
-                setShowBrandWarning(true);
-            }
+            setShowWarning(images.length === 0);
+            setShowBrandWarning(checkedBrands.length === 0);
         }
     };
-
+    
     const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const brand = e.target.value;
         if (e.target.checked) {
