@@ -5,7 +5,7 @@ import { IoIosInformationCircleOutline } from 'react-icons/io';
 import logo from '../../assets/IAS-logo.png';
 import AuthContext from '../../context/AuthContext';
 
-const Navbar = () => {
+const NavBar = () => {
     const { logout } = useContext(AuthContext);
 
     return (
@@ -37,4 +37,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default NavBar;
