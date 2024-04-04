@@ -18,7 +18,7 @@ export default defineConfig(({ mode }) => {
             port: 5173,
             strictPort: true,
             host: true,
-            origin: 'http://localhost:5173',
+            origin: 'http://0.0.0.0:5173',
         },
         envPrefix: 'VITE_APP_',
         test: {
