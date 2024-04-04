@@ -17,8 +17,8 @@ function App(): JSX.Element {
                 <Routes>
                     <Route element={<AuthGuard />}>
                         <Route path='/' element={<Home />} />
+                        <Route path='/results' element={<ResultsPage />} />
                     </Route>
-                    <Route path='/results' element={<ResultsPage />} />
                     <Route path='/about' element={<AboutUs />} />
                     <Route path='/login' element={<LoginPage />} />
                     <Route path='/signUp' element={<SignUpPage />} />
