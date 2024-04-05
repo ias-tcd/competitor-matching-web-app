@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import './Game.css';
 import AsicsLogo from '../../assets/Car brands/Asics.webp';
 import BMWLogo from '../../assets/Car brands/BMW.jpg';
@@ -91,10 +91,25 @@ const Game = () => {
     const [guessedBrands, setGuessedBrands] = useState<{ name: string; logo?: string | undefined }[]>([]);
     const [guessStatus, setGuessStatus] = useState('');
 
+    const chooseRandomBrand = useCallback(() => {
+        let randomBrand;
+        do {
+            randomBrand = brands[Math.floor(Math.random() * brands.length)];
+        } while (guessedBrands.includes(randomBrand)); // Ensure the brand is not in guessedBrands
+        return randomBrand;
+    }, [guessedBrands]);
+
     useEffect(() => {
         const timer = setInterval(() => {
             setTimeLeft(timeLeft - 1);
         }, 1000);
+
+        const resetGame = () => {
+            setScore(0);
+            setTimeLeft(60);
+            setGuessedBrands([]);
+            setCurrentBrand(chooseRandomBrand());
+        };
 
         if (timeLeft === -1) {
             clearInterval(timer);
@@ -103,21 +118,13 @@ const Game = () => {
         }
 
         return () => clearInterval(timer);
-    }, [timeLeft, score]);
+    }, [timeLeft, score, chooseRandomBrand]);
 
     useEffect(() => {
-        return setCurrentBrand(chooseRandomBrand());
-    }, []);
+        setCurrentBrand(chooseRandomBrand());
+    }, [chooseRandomBrand]);
 
-    const chooseRandomBrand = () => {
-        let randomBrand;
-        do {
-            randomBrand = brands[Math.floor(Math.random() * brands.length)];
-        } while (guessedBrands.includes(randomBrand)); // Ensure the brand is not in guessedBrands
-        return randomBrand;
-    };
-
-    const handleGuess = () => {
+    const handleGuess = useCallback(() => {
         if (userGuess.toLowerCase() === currentBrand.name.toLowerCase()) {
             setScore(score + 1);
             setUserGuess('');
@@ -130,14 +137,7 @@ const Game = () => {
             setGuessStatus('incorrect');
             setTimeout(() => setGuessStatus(''), 1000); // Reset guess status after 1 second
         }
-    };
-
-    const resetGame = () => {
-        setScore(0);
-        setTimeLeft(60);
-        setGuessedBrands([]);
-        setCurrentBrand(chooseRandomBrand());
-    };
+    }, [userGuess, currentBrand, score, guessedBrands, chooseRandomBrand]);
 
     useEffect(() => {
         const handleKeyUp = (event: { key: string }) => {
