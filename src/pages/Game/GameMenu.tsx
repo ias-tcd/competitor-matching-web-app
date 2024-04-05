@@ -3,7 +3,7 @@ import './GameMenu.css';
 import detective from '../../assets/GameMenu/Detective.gif';
 import box from '../../assets/GameMenu/mario.gif';
 
-const InstructionDialog = ({ onClose }) => {
+const InstructionDialog = ({ onClose }: { onClose: () => void }) => {
     return (
         <div className='instruction-dialog'>
             <div className='modal-content'>
@@ -31,7 +31,7 @@ const InstructionDialog = ({ onClose }) => {
     );
 };
 
-const GameMenu = ({ startGame }) => {
+const GameMenu = ({ startGame }: { startGame: () => void }) => {
     const [showInstructionDialog, setShowInstructionDialog] = useState(false);
 
     const handleStartGame = () => {
