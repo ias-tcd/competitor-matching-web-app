@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'; 
+import { useState, useEffect } from 'react';
 import './Game.css';
 import AsicsLogo from '../../assets/Car brands/Asics.webp';
 import BMWLogo from '../../assets/Car brands/BMW.jpg';

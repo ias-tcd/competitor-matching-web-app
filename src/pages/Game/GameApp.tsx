@@ -8,7 +8,7 @@ const App = () => {
     const startGame = () => {
         setInGame(true);
     };
- 
+
     return <div className='app'>{inGame ? <Game /> : <Menu startGame={startGame} />}</div>;
 };
 
