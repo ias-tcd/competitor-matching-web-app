@@ -40,7 +40,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose, setFileNames }) 
     };
 
     const handleUpload = async () => {
-        if ((images.length !== 0 || fileList)&& checkedBrands.length > 0) {
+        if ((images.length !== 0 || fileList) && checkedBrands.length > 0) {
             setShowWarning(false);
             let success = false;
             const formData = new FormData();
@@ -59,12 +59,11 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose, setFileNames }) 
                 setShowWarning(true);
             } else {
                 setShowBrandWarning(true);
-            }  
+            }
         }
-        
     };
 
-    const handleCheckboxChange = (e: { target: { value: any; checked: any; }; }) => {
+    const handleCheckboxChange = (e: { target: { value: string; checked: boolean } }) => {
         const brand = e.target.value;
         if (e.target.checked) {
             setCheckedBrands(prevCheckedBrands => [...prevCheckedBrands, brand]);

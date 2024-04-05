@@ -12,7 +12,6 @@
     z-index: 1;
     display: flex;
     align-items: center;
-    
 }
 
 .nav-links {
@@ -56,13 +55,12 @@
 
 .navbar-container {
     position: relative;
-
 }
 
 .dropdown-menu {
     position: fixed;
     display: inline;
-    top: 70px; 
+    top: 70px;
     right: 5px;
     background-color: rgb(31, 27, 27);
     border: 1px solid #ccc;
@@ -71,17 +69,15 @@
     z-index: 1000;
 }
 
-.avatar:hover{
+.avatar:hover {
     color: rgb(30, 215, 13);
 }
-.logoutButton{
+.logoutButton {
     background-color: rgba(56, 72, 55, 0.3);
     color: #fff;
     text-align: center;
 }
-.logoutButton:hover{
- color: red;
- background-color: rgba(56, 72, 55, 0.3);
-
- 
+.logoutButton:hover {
+    color: red;
+    background-color: rgba(56, 72, 55, 0.3);
 }

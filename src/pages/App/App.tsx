@@ -10,10 +10,10 @@ import Game from '../Game/GameApp.tsx';
 
 function App(): JSX.Element {
     return (
-    <AuthProvider>
-        <NavBar />
+        <AuthProvider>
+            <NavBar />
             <Routes>
-                 <Route element={<AuthGuard />}>
+                <Route element={<AuthGuard />}>
                     <Route path='/' element={<Home />} />
                 </Route>
                 <Route path='/about' element={<AboutUs />} />
@@ -21,8 +21,7 @@ function App(): JSX.Element {
                 <Route path='/login' element={<LoginPage />} />
                 <Route path='/signUp' element={<SignUpPage />} />
             </Routes>
-    </AuthProvider>
-
+        </AuthProvider>
     );
 }
 

@@ -1,4 +1,4 @@
-.wrapper{
+.wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,6 +9,6 @@
     z-index: 100;
 }
 
-.Loadings{
-  size:100px
+.Loadings {
+    size: 100px;
 }

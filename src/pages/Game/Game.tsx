@@ -1,5 +1,5 @@
-import  { useState, useEffect } from 'react';
-import './Game.css'
+import { useState, useEffect } from 'react';
+import './Game.css';
 import AsicsLogo from '../../assets/Car brands/Asics.webp';
 import BMWLogo from '../../assets/Car brands/BMW.jpg';
 import AudiLogo from '../../assets/Car brands/Audi.png';
@@ -37,96 +37,91 @@ import UnderArmourLogo from '../../assets/Car brands/underarmor.webp';
 import VansLogo from '../../assets/Car brands/vans.jpg';
 
 const brands = [
-   { name: 'Nike', logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg' },
-  { name: 'Apple', logo: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg' },
-  { name: 'Google', logo: GoogleLogo },
-  { name: 'Amazon', logo: AmazonLogo },
-  { name: 'Microsoft', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg' },
-  { name: 'Facebook', logo: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg' },
-  { name: 'Twitter', logo: TwitterLogo },
-  // Car Brands                                      
-  { name: 'Bugatti', logo: BugattiLogo },
-  { name: 'Lamborghini', logo: LamborghiniLogo },
-  { name: 'Lexus', logo: LexusLogo },
-  { name: 'Mercedes', logo: MercedesLogo },
-  { name: 'Renault', logo: RenaultLogo },
-  { name: 'Toyota', logo: ToyotaLogo },
-  { name: 'BMW', logo: BMWLogo },
-  { name: 'Bentley', logo: BentleyLogo },
-  { name: 'Audi', logo: AudiLogo },
-  { name: 'Hyundai', logo: HyundaiLogo },
-  { name: 'Mitsubishi', logo: MitsubishiLogo },
- 
+    { name: 'Nike', logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg' },
+    { name: 'Apple', logo: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg' },
+    { name: 'Google', logo: GoogleLogo },
+    { name: 'Amazon', logo: AmazonLogo },
+    { name: 'Microsoft', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg' },
+    { name: 'Facebook', logo: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg' },
+    { name: 'Twitter', logo: TwitterLogo },
+    // Car Brands
+    { name: 'Bugatti', logo: BugattiLogo },
+    { name: 'Lamborghini', logo: LamborghiniLogo },
+    { name: 'Lexus', logo: LexusLogo },
+    { name: 'Mercedes', logo: MercedesLogo },
+    { name: 'Renault', logo: RenaultLogo },
+    { name: 'Toyota', logo: ToyotaLogo },
+    { name: 'BMW', logo: BMWLogo },
+    { name: 'Bentley', logo: BentleyLogo },
+    { name: 'Audi', logo: AudiLogo },
+    { name: 'Hyundai', logo: HyundaiLogo },
+    { name: 'Mitsubishi', logo: MitsubishiLogo },
 
-  // Sports Brands
-  { name: 'Adidas', logo: AdidasLogo1 },
-  { name: 'Adidas', logo: AdidasLogo2 },
-  { name: 'Puma', logo: PumaLogo },
-  { name: 'Under Armour', logo: UnderArmourLogo },
-  { name: 'Reebok', logo: ReebokLogo1 },
-  { name: 'Reebok', logo: ReebokLogo2 },
-  { name: 'New Balance', logo: NewBalanceLogo1 },
-  { name: 'New Balance', logo: NewBalanceLogo2 },
-  { name: 'ASICS', logo: AsicsLogo },
-  { name: 'Converse', logo: ConverseLogo },
-  { name: 'Vans', logo: VansLogo },
-  { name: 'Lululemon', logo: LululemonLogo },
-  // Clothing Brands
-  { name: 'Gucci', logo: GucciLogo1 },
-  { name: 'Gucci', logo: GucciLogo2 },
-  { name: 'Louis Vuitton', logo: LouisVuittonLogo1 },
-  { name: 'Louis Vuitton', logo: LouisVuittonLogo2 },
-  { name: 'Chanel', logo: ChanelLogo },
-  { name: 'Ralph Lauren', logo: RalphLaurenLogo },
-  { name: 'Tommy Hilfiger', logo: TommyHilfigerLogo },
+    // Sports Brands
+    { name: 'Adidas', logo: AdidasLogo1 },
+    { name: 'Adidas', logo: AdidasLogo2 },
+    { name: 'Puma', logo: PumaLogo },
+    { name: 'Under Armour', logo: UnderArmourLogo },
+    { name: 'Reebok', logo: ReebokLogo1 },
+    { name: 'Reebok', logo: ReebokLogo2 },
+    { name: 'New Balance', logo: NewBalanceLogo1 },
+    { name: 'New Balance', logo: NewBalanceLogo2 },
+    { name: 'ASICS', logo: AsicsLogo },
+    { name: 'Converse', logo: ConverseLogo },
+    { name: 'Vans', logo: VansLogo },
+    { name: 'Lululemon', logo: LululemonLogo },
+    // Clothing Brands
+    { name: 'Gucci', logo: GucciLogo1 },
+    { name: 'Gucci', logo: GucciLogo2 },
+    { name: 'Louis Vuitton', logo: LouisVuittonLogo1 },
+    { name: 'Louis Vuitton', logo: LouisVuittonLogo2 },
+    { name: 'Chanel', logo: ChanelLogo },
+    { name: 'Ralph Lauren', logo: RalphLaurenLogo },
+    { name: 'Tommy Hilfiger', logo: TommyHilfigerLogo },
 
-  { name: 'Spotify', logo: SpotifyLogo },
-  { name: 'Tayto', logo: TaytoLogo }
+    { name: 'Spotify', logo: SpotifyLogo },
+    { name: 'Tayto', logo: TaytoLogo },
 ];
 
 const Game = () => {
-  const [currentBrand, setCurrentBrand] = useState("");
-  const [userGuess, setUserGuess] = useState('');
-  const [score, setScore] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(60);
-    const [guessedBrands, setGuessedBrands] = useState([]);
-  const [highScore, setHighScore] = useState(
-    localStorage.getItem('highScore') || 0
-  );
-      const [guessStatus, setGuessStatus] = useState('');
+    const [currentBrand, setCurrentBrand] = useState<{ name: string; logo?: string }>({ name: '', logo: '' });
+    const [userGuess, setUserGuess] = useState('');
+    const [score, setScore] = useState(0);
+    const [timeLeft, setTimeLeft] = useState(60);
+    const [guessedBrands, setGuessedBrands] = useState<{ name: string; logo?: string | undefined }[]>([]);
+    const [guessStatus, setGuessStatus] = useState('');
 
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setTimeLeft(timeLeft - 1);
+        }, 1000);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(timeLeft - 1);
-    }, 1000);
+        if (timeLeft === -1) {
+            clearInterval(timer);
+            alert("Time's up! Your score: " + score);
+            resetGame();
+        }
 
-    if (timeLeft === -1) {
-      clearInterval(timer);
-      alert('Time\'s up! Your score: ' + score);
-      resetGame();
-    }
+        return () => clearInterval(timer);
+    }, [timeLeft, score]);
 
-    return () => clearInterval(timer);
-  }, [timeLeft, score]);
+    useEffect(() => {
+        return setCurrentBrand(chooseRandomBrand());
+    }, []);
 
-  useEffect(() => {
-    setCurrentBrand(chooseRandomBrand());
-  }, []);
+    const chooseRandomBrand = () => {
+        let randomBrand;
+        do {
+            randomBrand = brands[Math.floor(Math.random() * brands.length)];
+        } while (guessedBrands.includes(randomBrand)); // Ensure the brand is not in guessedBrands
+        return randomBrand;
+    };
 
-  const chooseRandomBrand = () => {
-let randomBrand;
-    do {
-      randomBrand = brands[Math.floor(Math.random() * brands.length)];
-    } while (guessedBrands.includes(randomBrand)); // Ensure the brand is not in guessedBrands
-    return randomBrand;
-  };
-  
-  const handleGuess = () => {
+    const handleGuess = () => {
         if (userGuess.toLowerCase() === currentBrand.name.toLowerCase()) {
             setScore(score + 1);
             setUserGuess('');
-                  setGuessedBrands([...guessedBrands, currentBrand]);
+            setGuessedBrands([...guessedBrands, currentBrand]);
             setCurrentBrand(chooseRandomBrand());
             setGuessStatus('correct');
             setTimeout(() => setGuessStatus(''), 1000); // Reset guess status after 1 second
@@ -137,61 +132,73 @@ let randomBrand;
         }
     };
 
-  const resetGame = () => {
-    setScore(0);
-    setTimeLeft(60);
+    const resetGame = () => {
+        setScore(0);
+        setTimeLeft(60);
         setGuessedBrands([]);
-    setCurrentBrand(chooseRandomBrand());
-  };
-
-  useEffect(() => {
-    const handleKeyUp = (event) => {
-      if (event.key === "Enter") {
-        handleGuess();
-      }
+        setCurrentBrand(chooseRandomBrand());
     };
 
-    document.addEventListener("keyup", handleKeyUp);
+    useEffect(() => {
+        const handleKeyUp = (event: { key: string }) => {
+            if (event.key === 'Enter') {
+                handleGuess();
+            }
+        };
 
-    return () => {
-      document.removeEventListener("keyup", handleKeyUp);
-    };
-  }, [handleGuess]);
+        document.addEventListener('keyup', handleKeyUp);
 
-  useEffect(() => {
-    if (score > highScore) {
-      setHighScore(score);
-      localStorage.setItem('highScore', score);
-    }
-  }, [score, highScore]);
+        return () => {
+            document.removeEventListener('keyup', handleKeyUp);
+        };
+    }, [handleGuess]);
 
-  return (
-    <div className="container">
-      <div className="scoreboard">
-        <p style={{color:'black'}}>Time Left: <span style={{color:'#f1356d'}}>{timeLeft} seconds</span></p>
-        <p style={{color:'black'}}>Score: <span className={guessStatus === 'correct' ? 'score-correct' : guessStatus === 'incorrect' ? '' : ''}>
-        {score}
-        </span>
-        </p>
-      </div>
-       <div className="high-score"><span style={{color:'black'}}>High Score:</span> {highScore}</div>
-      <div>
-        <img className="brand-logo" src={currentBrand.logo} alt="Brand Logo" style={{width:300, height:300}} />
-      </div>
-      <div>
-        <input
-          type="text"
-          id='gameInput'
-          placeholder="Identify the brand"
-          value={userGuess}
-          onChange={(e) => setUserGuess(e.target.value)}
-          className={guessStatus === 'correct' ? 'correct-guess' : guessStatus === 'incorrect' ? 'score-incorrect' : ''}
-          style={{ borderColor: guessStatus === 'correct' ? 'green' : guessStatus === 'incorrect' ? 'red' : '' }}
-        />
-        <button onClick={handleGuess}>Enter</button>
-      </div>
-    </div>
-  );
+    return (
+        <div className='container'>
+            <div className='scoreboard'>
+                <p style={{ color: 'black' }}>
+                    Time Left: <span style={{ color: '#f1356d' }}>{timeLeft} seconds</span>
+                </p>
+                <p style={{ color: 'black' }}>
+                    Score:{' '}
+                    <span
+                        className={guessStatus === 'correct' ? 'score-correct' : guessStatus === 'incorrect' ? '' : ''}
+                    >
+                        {score}
+                    </span>
+                </p>
+            </div>
+
+            <div>
+                <img
+                    className='brand-logo'
+                    src={currentBrand.logo}
+                    alt='Brand Logo'
+                    style={{ width: 300, height: 300 }}
+                />
+            </div>
+            <div>
+                <input
+                    type='text'
+                    id='gameInput'
+                    placeholder='Identify the brand'
+                    value={userGuess}
+                    onChange={e => setUserGuess(e.target.value)}
+                    className={
+                        guessStatus === 'correct'
+                            ? 'correct-guess'
+                            : guessStatus === 'incorrect'
+                              ? 'score-incorrect'
+                              : ''
+                    }
+                    style={{
+                        borderColor: guessStatus === 'correct' ? 'green' : guessStatus === 'incorrect' ? 'red' : '',
+                    }}
+                />
+                <button onClick={handleGuess}>Enter</button>
+            </div>
+        </div>
+    );
 };
 
 export default Game;
