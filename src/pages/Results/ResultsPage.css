@@ -1,0 +1,19 @@
+.results-page {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.result-container {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.detection-info {
+    margin-left: 20px;
+}
+
+.model-info {
+    margin-top: 40px;
+}
