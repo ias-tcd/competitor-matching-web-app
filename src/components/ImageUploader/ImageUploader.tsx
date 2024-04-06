@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import UseAxios from '../../utils/UseAxios';
 import { TiDeleteOutline } from 'react-icons/ti';
+import { useNavigate } from 'react-router-dom';
+import { useDetectionResults } from '../../context/DetectionResultsContext';
 
 interface ImageState {
     url: string;
@@ -13,18 +15,18 @@ interface ImageUploaderProps {
     setFileNames: (fileNames: string[]) => void;
 }
 
-const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose, setFileNames }) => {
+const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose }) => {
     const [images, setImages] = useState<ImageState[]>([]);
-    const [fileList, setFileList] = useState<FileList | null>(null);
     const [showWarning, setShowWarning] = useState(false);
     const [checkedBrands, setCheckedBrands] = useState<string[]>([]);
     const [showBrandWarning, setShowBrandWarning] = useState(false);
 
+    const navigate = useNavigate();
     const api = UseAxios();
+    const { setDetectionResults } = useDetectionResults();
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         if (e.target.files) {
-            setFileList(e.target.files);
             setShowWarning(false);
             const newImages = Array.from(e.target.files).map((file, index) => ({
                 url: URL.createObjectURL(file),
@@ -34,27 +36,30 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose, setFileNames }) 
             setImages(prevImages => [...prevImages, ...newImages]);
             if (images.length === 1) {
                 setShowWarning(false);
-                setFileList(null);
             }
         }
     };
 
     const handleUpload = async () => {
+<<<<<<< HEAD
         if ((images.length !== 0 || fileList) && checkedBrands.length > 0) {
+=======
+        if (images.length > 0 && checkedBrands.length > 0) {
+>>>>>>> main
             setShowWarning(false);
-            let success = false;
             const formData = new FormData();
-            images?.forEach((image: ImageState, index: number) => formData.append(`images[${index}]`, image?.file));
+            images.forEach((image, index) => formData.append(`images[${index}]`, image.file));
+
             try {
                 const { data } = await api.post('/images/predictions/', formData);
-                setFileNames(data?.images);
-                success = true;
+                setDetectionResults(data);
+                navigate('/results');
             } catch (err) {
-                console.error(err);
+                console.error('Upload failed:', err);
+                alert('Failed to upload images. Please try again.');
             }
-            alert(`Images uploaded ${success ? '' : 'un'}successfully!`);
-            onClose();
         } else {
+<<<<<<< HEAD
             if (images.length === 0) {
                 setShowWarning(true);
             } else {
@@ -64,6 +69,14 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose, setFileNames }) 
     };
 
     const handleCheckboxChange = (e: { target: { value: string; checked: boolean } }) => {
+=======
+            setShowWarning(images.length === 0);
+            setShowBrandWarning(checkedBrands.length === 0);
+        }
+    };
+
+    const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+>>>>>>> main
         const brand = e.target.value;
         if (e.target.checked) {
             setCheckedBrands(prevCheckedBrands => [...prevCheckedBrands, brand]);
@@ -80,7 +93,6 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose, setFileNames }) 
 
     const handleCancel = () => {
         setImages([]);
-        setFileList(null);
         onClose();
     };
 
@@ -88,7 +100,13 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose, setFileNames }) 
         <div className='dialog-container'>
             <p style={{ marginBottom: -15 }}>Upload Multiple images along with the</p>
             <p>brands you would like us to detect:</p>
-            <input type='file' accept='image/*' multiple onChange={handleFileChange} />
+            <input
+                type='file'
+                accept='image/*'
+                multiple
+                onChange={handleFileChange}
+                data-testid='image-uploader-input'
+            />
             <p>Total Images: {images.length}</p>
             <div className='image-container'>
                 {images.map((image, index) => (

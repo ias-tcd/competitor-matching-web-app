@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+<<<<<<< HEAD
 :root {
     background-color: rgb(23, 23, 23);
     overflow-x: hidden;
+=======
+.body {
+    color: inherit;
+>>>>>>> main
 }
 .about-us {
     font-family: 'Roboto';
@@ -12,7 +17,11 @@
 }
 .about-us-bg {
     height: 100vh;
+<<<<<<< HEAD
     width: 100vw;
+=======
+    width: 100%;
+>>>>>>> main
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +29,11 @@
 }
 .about-us-image {
     width: 100%;
+<<<<<<< HEAD
     height: 80%;
+=======
+    height: 70%;
+>>>>>>> main
     position: relative;
 }
 .about-us-image img {
@@ -28,6 +41,7 @@
     height: 125%;
     display: block;
 }
+<<<<<<< HEAD
 
 .team-image {
     opacity: 0.3;
@@ -50,6 +64,58 @@
     position: absolute;
     top: 20%;
     right: 29%;
+=======
+.about-us-title {
+    width: 100%;
+    height: 125%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: 0.2s;
+}
+.about-us-title {
+    opacity: 1;
+}
+.about-us-title h1 {
+    font-size: 102px;
+    letter-spacing: 0.3rem;
+    margin-bottom: -35px;
+}
+.about-us-title > * {
+    transform: translateY(25px);
+    transition: transform 0s;
+}
+.about-us-title > * {
+    transform: translateY(0px);
+}
+.underline {
+    color: #6eff29;
+    padding: 0px;
+    white-space: 0px;
+}
+
+.team-image {
+    opacity: 0.5;
+    text-wrap: wrap;
+    width: 75%;
+    filter: blur(01px);
+    z-index: 2;
+}
+
+.logo-divider {
+    display: flex;
+    border-style: solid;
+    color: black;
+    width: 140px;
+    margin-left: 30px;
+    background-color: white;
+>>>>>>> main
 }
 
 .company-info {
@@ -59,6 +125,7 @@
     margin-bottom: 0px;
     width: 100%;
     padding: 0px 0px;
+<<<<<<< HEAD
     scale: 0.8;
     opacity: 0;
     animation: fade-in linear;
@@ -75,12 +142,17 @@
         scale: 0.8;
         opacity: 0;
     }
+=======
+>>>>>>> main
 }
 .company-info-details {
     line-height: 40px;
     font-size: 24px;
     padding-right: 75px;
+<<<<<<< HEAD
     padding-left: 75px;
+=======
+>>>>>>> main
 }
 
 .goal-info {
@@ -89,6 +161,7 @@
     align-items: left;
     text-align: left;
     width: 100%;
+<<<<<<< HEAD
     scale: 0.8;
     opacity: 0;
     animation: fade-in2 linear;
@@ -105,11 +178,16 @@
         scale: 0.8;
         opacity: 0;
     }
+=======
+>>>>>>> main
 }
 
 .goal-image {
     flex: 1;
+<<<<<<< HEAD
     padding-left: 75px;
+=======
+>>>>>>> main
 }
 .goal-info-details {
     flex: 1;

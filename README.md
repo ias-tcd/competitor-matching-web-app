@@ -1,5 +1,9 @@
 # Competitor Matching Web App
 
+[![Build and Deploy to AWS](https://github.com/ias-tcd/competitor-matching-web-app/actions/workflows/deploy.yml/badge.svg)](https://github.com/ias-tcd/competitor-matching-web-app/actions/workflows/deploy.yml)
+[![Build and Test](https://github.com/ias-tcd/competitor-matching-web-app/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/ias-tcd/competitor-matching-web-app/actions/workflows/build-and-test.yml)
+[![Format and Lint](https://github.com/ias-tcd/competitor-matching-web-app/actions/workflows/format-and-lint.yml/badge.svg)](https://github.com/ias-tcd/competitor-matching-web-app/actions/workflows/format-and-lint.yml)
+
 This repo contains the source code for the web-app for TCD SwEng Group 20's project with Integral Ad Science - a competitor matching machine learning model.
 
 We use React, Typescript, Vite, pnpm and Docker to run this web application.

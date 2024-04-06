@@ -38,6 +38,21 @@
     text-decoration: none;
 }
 
+.nav-links li button {
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li button:hover {
+    color: #1ed70d;
+    text-decoration: none;
+}
+
 .nav-brand {
     display: flex;
     align-items: center;

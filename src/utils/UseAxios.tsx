@@ -20,7 +20,7 @@ import dayjs from 'dayjs';
 const UseAxios = () => {
     const { tokens, user, handleChangedTokens } = useContext(AuthContext);
 
-    process.env.VITE_APP_API_URL = process.env.VITE_APP_API_URL ?? 'http://localhost:8000';
+    process.env.VITE_APP_API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
     const axiosInstance = axios.create({
         baseURL: process.env.VITE_APP_API_URL,
         headers: {
