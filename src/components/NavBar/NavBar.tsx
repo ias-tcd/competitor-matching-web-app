@@ -7,7 +7,6 @@ import { FaUserCircle } from 'react-icons/fa';
 import AuthContext from '../../context/AuthContext';
 import { IoLogOutOutline, IoGameController } from 'react-icons/io5';
 
-<<<<<<< HEAD
 interface DropdownMenuProps {
     userFirstName: string;
     userLastName: string;
@@ -15,11 +14,8 @@ interface DropdownMenuProps {
 }
 
 const DropdownMenu: React.FC<DropdownMenuProps> = ({ userFirstName, userLastName, onLogout }) => {
-=======
-const NavBar = () => {
-    const { logout } = useContext(AuthContext);
+    useContext(AuthContext);
 
->>>>>>> main
     return (
         <div className='dropdown-menu'>
             <div
@@ -77,8 +73,7 @@ const NavBar = () => {
     );
 };
 
-<<<<<<< HEAD
-const Navbar = () => {
+const NavBar = () => {
     const { user, logout } = useContext(AuthContext);
     const [showDropdown, setShowDropdown] = useState(false);
 
@@ -131,7 +126,5 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
-=======
+
 export default NavBar;
->>>>>>> main

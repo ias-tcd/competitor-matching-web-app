@@ -23,7 +23,7 @@ import GucciLogo2 from '../../assets/Car brands/gucci2.webp';
 import HyundaiLogo from '../../assets/Car brands/hyundai.jpeg';
 import LexusLogo from '../../assets/Car brands/lexus.jpg';
 import LululemonLogo from '../../assets/Car brands/lululemon.jpg';
-import MercedesLogo from '../../assets/Car brands/mercedes.jpg';
+import MercedesLogo from '../../assets/Car brands/Mercedes.jpg';
 import MitsubishiLogo from '../../assets/Car brands/mitsubishi.jpg';
 import NewBalanceLogo1 from '../../assets/Car brands/newbalence.avif';
 import NewBalanceLogo2 from '../../assets/Car brands/newbalence2.jpeg';

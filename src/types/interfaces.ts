@@ -13,8 +13,6 @@ export interface Tokens {
     access: string;
     refresh: string;
 }
-<<<<<<< HEAD
-=======
 
 export interface BBox {
     x: number;
@@ -45,4 +43,3 @@ export interface ImageAnalysis {
 }
 
 export type DetectionResults = ImageAnalysis[];
->>>>>>> main
