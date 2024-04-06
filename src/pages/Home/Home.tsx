@@ -24,7 +24,7 @@ function Home(): JSX.Element {
     return (
         <div id='root'>
             <div className='web-brand'>
-                <img src={logo} style={{ height: 100, width: 200, mixBlendMode: 'color-burn' }} />
+                <img src={logo} style={{ height: 100, width: 200, mixBlendMode: 'color-burn' }} id='logo-container' />
             </div>
             <p style={{ fontSize: 24 }}>
                 Discover the power of brand recognition with IAS – the ultimate competitor-matching web app. Seamlessly
