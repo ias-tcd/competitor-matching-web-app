@@ -41,7 +41,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose }) => {
     };
 
     const handleUpload = async () => {
-        if ((images.length !== 0) && checkedBrands.length > 0) {
+        if (images.length !== 0 && checkedBrands.length > 0) {
             setShowWarning(false);
             const formData = new FormData();
             images.forEach((image, index) => formData.append(`images[${index}]`, image.file));

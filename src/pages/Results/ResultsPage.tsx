@@ -19,7 +19,7 @@ const ResultsPage: React.FC = () => {
                         <BoundingBoxes
                             boundingBoxes={getBoundingBoxes()}
                             image={{
-                                src: result.analysis.image
+                                src: result.analysis.image,
                             }}
                         />
                     </div>

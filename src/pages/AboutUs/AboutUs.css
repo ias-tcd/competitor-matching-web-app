@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-
-
-:root{
+:root {
     background-color: rgb(23, 23, 23);
     overflow-x: hidden;
 }
@@ -11,47 +9,41 @@
     height: 150vh;
     padding: 200px;
     background-color: rgb(23, 23, 23);
-        
-
 }
-.about-us-bg{
+.about-us-bg {
     height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 100px;
-
 }
-.about-us-image{
-    width:100%;
+.about-us-image {
+    width: 100%;
     height: 80%;
-    position:relative;
+    position: relative;
 }
-.about-us-image img{
-    width:100%;
+.about-us-image img {
+    width: 100%;
     height: 125%;
     display: block;
 }
 
-
-
-.team-image{
-    opacity:0.3;
+.team-image {
+    opacity: 0.3;
     position: absolute;
-    object-fit: cover; 
+    object-fit: cover;
     width: 100%;
     display: block;
-    background-color: rgba(0, 0, 0,1);
-
+    background-color: rgba(0, 0, 0, 1);
 }
-.about-us-title{
+.about-us-title {
     opacity: 1;
-    outline: #6EFF29;
+    outline: #6eff29;
     z-index: 0;
     text-decoration: underline;
-    text-decoration-color: #6EFF29;
-    text-decoration-thickness:1.5px;
+    text-decoration-color: #6eff29;
+    text-decoration-thickness: 1.5px;
     font-size: 70px;
     text-underline-offset: 10px;
     text-decoration-skip: 200px;
@@ -61,77 +53,82 @@
 }
 
 .company-info {
-    display:flex;
-    flex:1;
+    display: flex;
+    flex: 1;
     text-align: left;
     margin-bottom: 0px;
     width: 100%;
     padding: 0px 0px;
-    scale: .8; opacity: 0;
+    scale: 0.8;
+    opacity: 0;
     animation: fade-in linear;
-    animation-timeline:view();
+    animation-timeline: view();
     animation-range-start: -150px;
     animation-range-end: 1050px;
-    }
+}
 @keyframes fade-in {
-    50% {scale:1; opacity:1;}
-    100% {scale:0.8; opacity:0}
+    50% {
+        scale: 1;
+        opacity: 1;
     }
+    100% {
+        scale: 0.8;
+        opacity: 0;
+    }
+}
 .company-info-details {
     line-height: 40px;
     font-size: 24px;
-    padding-right:75px;
-    padding-left:75px;   
+    padding-right: 75px;
+    padding-left: 75px;
 }
 
-
-.goal-info{
+.goal-info {
     display: flex;
-    justify-content:left;
-    align-items:left;
-    text-align:left;
-    width:100%;
-   scale: .8; opacity: 0;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+    width: 100%;
+    scale: 0.8;
+    opacity: 0;
     animation: fade-in2 linear;
-    animation-timeline:view();
+    animation-timeline: view();
     animation-range-start: -150px;
     animation-range-end: 1040px;
 }
 @keyframes fade-in2 {
-    50% {scale:1; opacity:1;}
-    100% {scale:0.8; opacity:0}
+    50% {
+        scale: 1;
+        opacity: 1;
+    }
+    100% {
+        scale: 0.8;
+        opacity: 0;
+    }
 }
 
-.goal-image{
+.goal-image {
     flex: 1;
-    padding-left:75px;
-
-
+    padding-left: 75px;
 }
-.goal-info-details{
+.goal-info-details {
     flex: 1;
     margin: 0px 25px;
     line-height: 60px;
     font-size: 24px;
-    
 }
-
-
 
 .team-members {
     display: flex;
     position: relative;
-    width:fit-content;
+    width: fit-content;
     padding: 20px;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-
-
-
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.card{
+.card {
     position: flex;
     width: 200px;
     height: 260px;
@@ -140,7 +137,7 @@
     transition: all 2s ease;
 }
 
-.cardFlipped{
+.cardFlipped {
     position: flex;
     width: 200px;
     height: 260px;
@@ -158,9 +155,9 @@
     border-radius: 5px;
     transform: rotateY(180deg);
     flex-direction: column;
-    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
     background: linear-gradient(to top, green, yellow, yellow, green);
-    animation: wave 4s ease-in-out infinite; 
+    animation: wave 4s ease-in-out infinite;
 }
 
 @keyframes wave {
@@ -168,7 +165,7 @@
         background-position: 0 0;
     }
     50% {
-        background-position: 0 -10px; 
+        background-position: 0 -10px;
     }
     100% {
         background-position: 0 0;
@@ -181,26 +178,25 @@
     border-bottom-right-radius: 5%;
     border-bottom-left-radius: 5%;
 }
-.team-member-name{
+.team-member-name {
     margin-top: -15px;
     font-size: 18px;
     font-weight: bolder;
-    color:#2D5E4A;
+    color: #2d5e4a;
     text-align: center;
 }
-.team-member-detail{
+.team-member-detail {
     text-align: center;
-    font-size: 0.75rem;  
-    color: #fff;  
+    font-size: 0.75rem;
+    color: #fff;
 }
-.backOfCard{
+.backOfCard {
     position: absolute;
     width: 200px;
     height: 260px;
     border-radius: 5px;
-    color:#6EFF29;
+    color: #6eff29;
     backface-visibility: hidden;
-    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
     flex-direction: column;
-} 
-
+}
