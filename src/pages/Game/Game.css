@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+    height: 90vh;
+    width: 50vw;
+    background: linear-gradient(180deg, #335e38, #aedeb2, #335e38);
+    border-style: solid;
+    border-color: black;
+    border-radius: 5px;
+    font-family: 'Quicksand';
+}
+
+.brand-logo {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-color: #06d21e;
+    background-color: beige;
+}
+
+input#gameInput {
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+    border: 1px solid #ccc;
+    border-width: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+input#gameInput:focus {
+    outline: none;
+    border-color: #0a0e0b;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #06d21e;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 13px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #05a618;
+}
+
+.scoreboard {
+    display: block;
+    margin-top: 20px;
+    border-color: black;
+    border-style: solid;
+    padding: 20px 40px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: rgb(186, 183, 183, 0.2);
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.7); /* Soft shadow */
+}
+
+@media screen and (max-width: 600px) {
+    .brand-logo {
+        max-width: 200px;
+        max-height: 150px;
+    }
+}
+
+.correct-guess {
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.908);
+    border-color: rgb(0, 255, 0);
+}
+
+.incorrect-guess {
+    border-color: red;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+    animation: shake 0.8s ease forwards;
+}
+
+.score-correct {
+    color: rgb(14, 200, 14);
+    animation: scaleUp 0.9s ease forwards;
+}
+
+.score-incorrect {
+    color: red;
+    animation: shakeAndScale 0.5s ease forwards;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    75% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes shakeAndScale {
+    0% {
+        transform: rotate(0) scale(1);
+    }
+    25% {
+        transform: rotate(-10deg) scale(1);
+    }
+    50% {
+        transform: rotate(10deg) scale(1);
+    }
+    75% {
+        transform: rotate(-10deg) scale(1);
+    }
+    100% {
+        transform: rotate(0) scale(1);
+    }
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(3);
+    }
+}
+span {
+    color: #fff;
+}

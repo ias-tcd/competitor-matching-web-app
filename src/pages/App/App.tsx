@@ -6,6 +6,7 @@ import AboutUs from '../AboutUs/AboutUs.tsx';
 import AuthProvider from '../../context/AuthProvider.tsx';
 import AuthGuard from '../../utils/AuthGuard.tsx';
 import NavBar from '../../components/NavBar/NavBar.tsx';
+import Game from '../Game/GameApp.tsx';
 import ResultsPage from '../Results/ResultsPage.tsx';
 import { DetectionProvider } from '../../context/DetectionProvider.tsx';
 
@@ -20,6 +21,7 @@ function App(): JSX.Element {
                         <Route path='/results' element={<ResultsPage />} />
                     </Route>
                     <Route path='/about' element={<AboutUs />} />
+                    <Route path='/game' element={<Game />} />
                     <Route path='/login' element={<LoginPage />} />
                     <Route path='/signUp' element={<SignUpPage />} />
                 </Routes>
