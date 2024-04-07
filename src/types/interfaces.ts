@@ -44,3 +44,11 @@ export interface ImageAnalysis {
 }
 
 export type DetectionResults = ImageAnalysis[];
+
+export interface Brand {
+    id: string;
+    name: string;
+    created_at: string | Date;
+    updated_at: string | Date;
+    logo: string;
+}
