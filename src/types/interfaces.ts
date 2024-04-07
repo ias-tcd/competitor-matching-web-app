@@ -50,4 +50,5 @@ export interface Brand {
     created_at: string | Date;
     updated_at: string | Date;
     logo: string;
+    enabled: boolean;
 }

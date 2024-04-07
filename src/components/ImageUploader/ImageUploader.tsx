@@ -80,6 +80,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose }) => {
             setShowWarning(false);
             const formData = new FormData();
             images.forEach((image, index) => formData.append(`images[${index}]`, image.file));
+            formData?.append('brands', checkedBrands?.map(brand => brand?.id)?.join(','));
 
             try {
                 const { data } = await api.post('/images/predictions/', formData);
