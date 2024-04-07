@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import UseAxios from '../../utils/UseAxios';
 import { TiDeleteOutline } from 'react-icons/ti';
 import { useNavigate } from 'react-router-dom';
 import { useDetectionResults } from '../../context/DetectionResultsContext';
+import { Brand } from '../../types/interfaces';
 
 interface ImageState {
     url: string;
@@ -19,10 +20,25 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose }) => {
     const [showWarning, setShowWarning] = useState(false);
     const [checkedBrands, setCheckedBrands] = useState<string[]>([]);
     const [showBrandWarning, setShowBrandWarning] = useState(false);
+    const [brands, setBrands] = useState<Brand[]>([]);
 
     const navigate = useNavigate();
     const api = UseAxios();
     const { setDetectionResults } = useDetectionResults();
+
+    useEffect(() => {
+        const fetchBrands = async () => {
+            try {
+                const { data } = await api.get(`/brands/brands/`);
+                setBrands(data);
+            } catch (err) {
+                console.error(`Error in fetching brands: ${err}`);
+            }
+        };
+
+        fetchBrands();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         if (e.target.files) {
