@@ -41,7 +41,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose }) => {
     };
 
     const handleUpload = async () => {
-        if (images.length !== 0 && checkedBrands.length > 0) {
+        if (images.length > 0 && checkedBrands.length > 0) {
             setShowWarning(false);
             const formData = new FormData();
             images.forEach((image, index) => formData.append(`images[${index}]`, image.file));
@@ -55,15 +55,12 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose }) => {
                 alert('Failed to upload images. Please try again.');
             }
         } else {
-            if (images.length === 0) {
-                setShowWarning(true);
-            } else {
-                setShowBrandWarning(true);
-            }
+            setShowWarning(images.length === 0);
+            setShowBrandWarning(checkedBrands.length === 0);
         }
     };
 
-    const handleCheckboxChange = (e: { target: { value: string; checked: boolean } }) => {
+    const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const brand = e.target.value;
         if (e.target.checked) {
             setCheckedBrands(prevCheckedBrands => [...prevCheckedBrands, brand]);
