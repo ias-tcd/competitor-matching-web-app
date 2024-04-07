@@ -1,8 +1,29 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import UseAxios from '../../utils/UseAxios';
 import { TiDeleteOutline } from 'react-icons/ti';
 import { useNavigate } from 'react-router-dom';
 import { useDetectionResults } from '../../context/DetectionResultsContext';
+import { Brand } from '../../types/interfaces';
+
+interface BrandCheckBoxProps {
+    brand: Brand;
+    index: number;
+    handleCheckboxChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+const BrandCheckBox = ({ brand, index, handleCheckboxChange }: BrandCheckBoxProps) => (
+    <>
+        <input
+            type='checkbox'
+            id={brand?.name}
+            className={`brand-checkbox${index + 1}`}
+            value={JSON.stringify(brand)}
+            onChange={handleCheckboxChange}
+        />
+        <label htmlFor={brand?.name}>{brand?.name}</label>
+        {index % 4 === 3 && <br />}
+    </>
+);
 
 interface ImageState {
     url: string;
@@ -12,18 +33,32 @@ interface ImageState {
 
 interface ImageUploaderProps {
     onClose: () => void;
-    setFileNames: (fileNames: string[]) => void;
 }
 
 const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose }) => {
     const [images, setImages] = useState<ImageState[]>([]);
     const [showWarning, setShowWarning] = useState(false);
-    const [checkedBrands, setCheckedBrands] = useState<string[]>([]);
+    const [checkedBrands, setCheckedBrands] = useState<Brand[]>([]);
     const [showBrandWarning, setShowBrandWarning] = useState(false);
+    const [brands, setBrands] = useState<Brand[]>([]);
 
     const navigate = useNavigate();
     const api = UseAxios();
     const { setDetectionResults } = useDetectionResults();
+
+    useEffect(() => {
+        const fetchBrands = async () => {
+            try {
+                const { data } = await api.get(`/brands/brands/`);
+                setBrands(data);
+            } catch (err) {
+                console.error(`Error in fetching brands: ${err}`);
+            }
+        };
+
+        fetchBrands();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         if (e.target.files) {
@@ -61,12 +96,12 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose }) => {
     };
 
     const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const brand = e.target.value;
+        const brand = JSON.parse(e.target.value) as Brand;
         if (e.target.checked) {
             setCheckedBrands(prevCheckedBrands => [...prevCheckedBrands, brand]);
             setShowBrandWarning(false);
         } else {
-            setCheckedBrands(prevCheckedBrands => prevCheckedBrands.filter(item => item !== brand));
+            setCheckedBrands(prevCheckedBrands => prevCheckedBrands.filter(item => item?.id !== brand?.id));
         }
     };
 
@@ -118,76 +153,18 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose }) => {
             </div>
             <div className='brand-checkbox'>
                 <p>Brands:</p>
-                <input
-                    type='checkbox'
-                    id='Nike'
-                    className='brand-checkbox1'
-                    value='Nike'
-                    onChange={handleCheckboxChange}
-                />
-                <label htmlFor='Nike'>Nike</label>
-                <input
-                    type='checkbox'
-                    id='Adidas'
-                    className='brand-checkbox2'
-                    value='Adidas'
-                    onChange={handleCheckboxChange}
-                />
-                <label htmlFor='Adidas'>Adidas</label>
-                <input
-                    type='checkbox'
-                    id='Puma'
-                    className='brand-checkbox3'
-                    value='Puma'
-                    onChange={handleCheckboxChange}
-                />
-                <label htmlFor='Puma'>Puma</label>
-                <input
-                    type='checkbox'
-                    id='New-Balance'
-                    className='brand-checkbox4'
-                    value='New Balance'
-                    onChange={handleCheckboxChange}
-                />
-                <label htmlFor='New Balance'>New Balance</label>
-                <br />
-
-                <input
-                    type='checkbox'
-                    id='Lululemon'
-                    className='brand-checkboxes'
-                    value='Lululemon'
-                    onChange={handleCheckboxChange}
-                />
-                <label htmlFor='Lululemon'>Lululemon</label>
-                <input
-                    type='checkbox'
-                    id='Reebok'
-                    className='brand-checkboxes'
-                    value='Reebok'
-                    onChange={handleCheckboxChange}
-                />
-                <label htmlFor='Reebok'>Reebok</label>
-                <input
-                    type='checkbox'
-                    id='North-Face'
-                    className='brand-checkboxes'
-                    value='North Face'
-                    onChange={handleCheckboxChange}
-                />
-                <label htmlFor='North Face'>North Face</label>
-                <input
-                    type='checkbox'
-                    id='Under-Armor'
-                    className='brand-checkboxes'
-                    value='Under Armor'
-                    onChange={handleCheckboxChange}
-                />
-                <label htmlFor='Under Armor'>Under Armor</label>
+                {brands?.map((brand: Brand, index: number) => (
+                    <BrandCheckBox
+                        handleCheckboxChange={handleCheckboxChange}
+                        brand={brand}
+                        index={index}
+                        key={brand?.id}
+                    />
+                ))}
             </div>
             {showWarning && <p style={{ display: 'block', color: 'red' }}>Please select an image(s)</p>}
             {showBrandWarning && <p style={{ display: 'block', color: 'red' }}>Please select a brand(s)</p>}
-            <p>Checked brands: {checkedBrands.join(', ')}</p>
+            <p>Checked brands: {checkedBrands?.map(brand => brand?.name).join(', ')}</p>
             <button className='upload-button' onClick={handleUpload}>
                 Upload Images
             </button>

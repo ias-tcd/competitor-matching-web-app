@@ -10,7 +10,6 @@ import { DetectionProvider } from '../../context/DetectionProvider';
 
 describe('testing the ImageUploader component', () => {
     const onClose = vi.fn();
-    const setFileNames = vi.fn();
     URL.createObjectURL = vi.fn();
 
     beforeEach(async () => {
@@ -19,7 +18,7 @@ describe('testing the ImageUploader component', () => {
                 <AuthContext.Provider value={context}>
                     <DetectionProvider>
                         <MemoryRouter>
-                            <ImageUploader onClose={onClose} setFileNames={setFileNames} />
+                            <ImageUploader onClose={onClose} />
                         </MemoryRouter>
                     </DetectionProvider>
                 </AuthContext.Provider>,
