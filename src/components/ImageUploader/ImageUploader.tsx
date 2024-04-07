@@ -12,7 +12,6 @@ interface ImageState {
 
 interface ImageUploaderProps {
     onClose: () => void;
-    setFileNames: (fileNames: string[]) => void;
 }
 
 const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose }) => {

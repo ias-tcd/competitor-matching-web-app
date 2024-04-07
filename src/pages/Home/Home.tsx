@@ -8,12 +8,10 @@ import './Home.css';
 function Home(): JSX.Element {
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [mediaType, setMediaType] = useState<string | null>(null);
-    const [fileNames, setFileNames] = useState<string[]>([]);
 
     const openDialog = (type: string) => {
         setMediaType(type);
         setIsDialogOpen(true);
-        setFileNames([]);
     };
 
     const closeDialog = () => {
@@ -48,34 +46,12 @@ function Home(): JSX.Element {
             {isDialogOpen && (
                 <div className='overlay'>
                     <div className='dialog-container'>
-                        {mediaType === 'Images' && <ImageUploader onClose={closeDialog} setFileNames={setFileNames} />}
+                        {mediaType === 'Images' && <ImageUploader onClose={closeDialog} />}
                         {mediaType === 'Text' && <TextUploader onClose={closeDialog} />}
                         {mediaType === 'Video' && <VideoUploader onClose={closeDialog} />}
                     </div>
                 </div>
             )}
-
-            <div
-                style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
-                    gap: '10px',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    marginTop: '50px',
-                    opacity: '0.618',
-                }}
-            >
-                {fileNames.map((name: string, index: number) => (
-                    <div style={{ maxWidth: '400px' }} key={name + index}>
-                        <img
-                            alt={`result ${index}`}
-                            src={`${process.env.VITE_APP_API_URL}/images/predictions/results?image_path=${name}`}
-                            style={{ width: '100%', height: 'auto' }}
-                        />
-                    </div>
-                ))}
-            </div>
         </div>
     );
 }
