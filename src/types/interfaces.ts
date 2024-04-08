@@ -19,6 +19,7 @@ export interface BBox {
     y: number;
     width: number;
     height: number;
+    brand: string | null;
 }
 
 export interface Detection {
