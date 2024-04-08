@@ -1,7 +1,8 @@
-import { Card, Grid, Typography, List, ListItem, ListItemText } from '@mui/material';
+import { Card, Grid, Typography, List, ListItem, ListItemText, ListItemAvatar } from '@mui/material';
 import CardContent from '@mui/material/CardContent';
 import { BBox as IBoundingBox } from '../../types/interfaces';
 import BoundingBoxes from '../../components/BoundingBoxes/BoundingBoxes';
+import { getColour } from '../../utils/GetBrandColour';
 
 interface IndividualResultProps {
     image: {
@@ -27,9 +28,20 @@ const IndividualResult = ({ image, boundingBoxes }: IndividualResultProps) => {
                         <List>
                             {brandNames?.map(name => (
                                 <ListItem key={name}>
+                                    <ListItemAvatar>
+                                        <div
+                                            style={{
+                                                backgroundColor: getColour(name),
+                                                width: '24px',
+                                                height: '24px',
+                                                borderRadius: '50%',
+                                            }}
+                                        />
+                                    </ListItemAvatar>
                                     <ListItemText
                                         primary={name}
                                         primaryTypographyProps={{ variant: 'body1', color: 'black' }}
+                                        sx={{ ml: '-1.5rem' }}
                                     />
                                 </ListItem>
                             ))}
