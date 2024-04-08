@@ -11,7 +11,7 @@ import TemiPic from '../../assets/Team Members/Temi.jpeg';
 import TuathalPic from '../../assets/Team Members/Tuathal.jpeg';
 import DarraghPic from '../../assets/Team Members/Darragh.jpeg';
 import FintanPic from '../../assets/Team Members/Fintan.jpeg';
-import HannaPic from '../../assets/Team Members/Hanna.jpg';
+import HannaPic from '../../assets/Team Members/Hanna.jpeg';
 import PengPic from '../../assets/Team Members/Peng.jpg';
 import BeniPic from '../../assets/Team Members/Beni.jpeg';
 
