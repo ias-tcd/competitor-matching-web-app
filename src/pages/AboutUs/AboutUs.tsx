@@ -22,7 +22,7 @@ const AboutUs = () => {
         { name: 'Sam', role: 'Team Lead', Pic: SamPic},
         { name: 'Eva', role: 'API Team', Pic: EvaPic},
         { name: 'Darragh', role: 'Model Team', Pic: DarraghPic},
-        { name: 'Amy', role: 'UI Team', Pic: AmyPic},
+        { name: 'Amy', role: 'UI Team', Pic: AmyPic}, 
         { name: 'Temi', role: 'Data Team', Pic: TemiPic},
         { name: 'Beni', role: 'UI Team', Pic: BeniPic},
         { name: 'Dhruv', role: 'API Team', Pic: DhruvPic},
