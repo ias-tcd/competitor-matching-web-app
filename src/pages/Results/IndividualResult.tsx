@@ -1,4 +1,4 @@
-import { Card, Grid, Typography, List, ListItem, ListItemText, ListItemAvatar } from '@mui/material';
+import { Card, Grid, Typography, List, ListItem, ListItemText, ListItemAvatar, Paper } from '@mui/material';
 import CardContent from '@mui/material/CardContent';
 import { BBox as IBoundingBox } from '../../types/interfaces';
 import BoundingBoxes from '../../components/BoundingBoxes/BoundingBoxes';
@@ -21,7 +21,9 @@ const IndividualResult: React.FC<IndividualResultProps> = ({ image, boundingBoxe
             <CardContent>
                 <Grid container spacing={2} alignItems='center'>
                     <Grid item xs={12} md={4}>
-                        <BoundingBoxes boundingBoxes={boundingBoxes} image={image} />
+                        <Paper elevation={3}>
+                            <BoundingBoxes boundingBoxes={boundingBoxes} image={image} />
+                        </Paper>
                     </Grid>
                     <Grid item xs={12} md={4}>
                         {brandNames?.length ? (
@@ -54,14 +56,19 @@ const IndividualResult: React.FC<IndividualResultProps> = ({ image, boundingBoxe
                         )}
                     </Grid>
                     <Grid item xs={12} md={4}>
-                        <Typography variant='h5'>Our Analysis</Typography>
-                        <Typography variant='body2' color='black' textAlign='justify' textOverflow='wrap'>
-                            The YOLOv7 model has proven to be an effective tool for real-time object detection,
-                            including the identification of logos in images. This capability can be incredibly useful
-                            for businesses looking to monitor brand visibility across various media channels or to
-                            analyze market trends. By leveraging YOLOv7's advanced detection algorithms, companies can
-                            gain valuable insights into how and where their brand is being represented.
-                        </Typography>
+                        <Paper elevation={3}>
+                            <Grid sx={{ padding: '.3em' }}>
+                                <Typography variant='h5'>Our Analysis</Typography>
+                                <Typography variant='body2' color='black' textAlign='justify' textOverflow='wrap'>
+                                    The YOLOv7 model has proven to be an effective tool for real-time object detection,
+                                    including the identification of logos in images. This capability can be incredibly
+                                    useful for businesses looking to monitor brand visibility across various media
+                                    channels or to analyze market trends. By leveraging YOLOv7's advanced detection
+                                    algorithms, companies can gain valuable insights into how and where their brand is
+                                    being represented.
+                                </Typography>
+                            </Grid>
+                        </Paper>
                     </Grid>
                 </Grid>
             </CardContent>
