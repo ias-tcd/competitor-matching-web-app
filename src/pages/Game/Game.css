@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/glacial-indifference-2');
 
 .container {
     display: flex;
@@ -7,28 +7,23 @@
     flex-direction: column;
     margin-top: 40px;
     height: 90vh;
-    width: 50vw;
-    background: linear-gradient(180deg, #335e38, #aedeb2, #335e38);
-    border-style: solid;
-    border-color: black;
-    border-radius: 5px;
-    font-family: 'Quicksand';
+    width: 100vw;
+    background: linear-gradient(180deg, #000000, #29523f, #000000);
+    font-family: 'Glacial Indifference';
 }
 
 .brand-logo {
     margin-top: 20px;
     margin-bottom: 10px;
-    border-style: solid;
-    border-color: #06d21e;
     background-color: beige;
 }
 
 input#gameInput {
     padding: 10px;
     margin-right: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 50px;
     border: 1px solid #ccc;
-    border-width: 5px;
+    border-width: 2px;
     border-radius: 5px;
     box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
     transition:
@@ -44,7 +39,7 @@ input#gameInput:focus {
 
 button {
     padding: 8px 16px;
-    background-color: #06d21e;
+    background-color: #2c6a33;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -53,19 +48,18 @@ button {
 }
 
 button:hover {
-    background-color: #05a618;
+    background-color: #0ea720c8;
 }
 
 .scoreboard {
-    display: block;
+    display: flex;
     margin-top: 20px;
-    border-color: black;
     border-style: solid;
-    padding: 20px 40px;
+    padding: 10px 40px;
     font-size: 20px;
     border-radius: 10px;
-    background-color: rgb(186, 183, 183, 0.2);
-    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.7); /* Soft shadow */
+    background-color: rgba(238, 229, 229, 0.0);
+    margin-bottom: 10px;
 }
 
 @media screen and (max-width: 600px) {
@@ -143,3 +137,8 @@ button:hover {
 span {
     color: #fff;
 }
+
+
+
+
+

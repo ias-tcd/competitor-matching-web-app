@@ -156,8 +156,7 @@
     transform: rotateY(180deg);
     flex-direction: column;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(to top, green, yellow, yellow, green);
-    animation: wave 4s ease-in-out infinite;
+    background: linear-gradient(to top, #366342, #39FF14, #39FF14, #366342);
 }
 
 @keyframes wave {
@@ -182,7 +181,7 @@
     margin-top: -15px;
     font-size: 18px;
     font-weight: bolder;
-    color: #2d5e4a;
+    color: black;
     text-align: center;
 }
 .team-member-detail {
