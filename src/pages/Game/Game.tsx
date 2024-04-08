@@ -93,7 +93,7 @@ const brands = [
     { name: 'Rolex', logo: rolex },
     { name: 'Slazenger', logo: slazenger },
     { name: 'Givenchi', logo: givenchi },
-    { name: 'Lactose', logo: lacoste },
+    { name: 'Lacoste', logo: lacoste },
     { name: 'Kappa', logo: kappa },
     { name: 'Versace', logo: versace },
 ];
