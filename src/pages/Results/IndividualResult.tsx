@@ -15,14 +15,18 @@ interface IndividualResultProps {
 const IndividualResult = ({ image, boundingBoxes }: IndividualResultProps) => {
     const brandNames = boundingBoxes?.filter(bbox => !!bbox?.brand)?.map(bbox => bbox?.brand);
 
-    console.log(brandNames);
-
     return (
         <Card variant='outlined' sx={{ mb: '1em' }}>
             <CardContent>
                 <Grid container spacing={2}>
                     <Grid item sx={{ maxWidth: '20rem', maxHeight: '20rem' }}>
-                        <BoundingBoxes boundingBoxes={boundingBoxes} image={image} colours={['yellow']} />
+                        <BoundingBoxes
+                            boundingBoxes={boundingBoxes}
+                            image={image}
+                            colours={{
+                                'North Face': 'green',
+                            }}
+                        />
                     </Grid>
                     <Grid item sx={{ padding: '0.5em' }}>
                         <Typography variant='h5'>Brands Identified</Typography>
