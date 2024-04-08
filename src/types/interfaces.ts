@@ -19,6 +19,7 @@ export interface BBox {
     y: number;
     width: number;
     height: number;
+    brand: string | null;
 }
 
 export interface Detection {
@@ -51,4 +52,5 @@ export interface Brand {
     created_at: string | Date;
     updated_at: string | Date;
     logo: string;
+    enabled: boolean;
 }
