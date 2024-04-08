@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid } from '@mui/material';
+import { Grid, Container } from '@mui/material';
 import { useDetectionResults } from '../../context/DetectionResultsContext';
 import IndividualResult from './IndividualResult';
 import { Detection } from '../../types/interfaces';
@@ -8,17 +8,9 @@ const ResultsPage: React.FC = () => {
     const { detectionResults } = useDetectionResults();
 
     return (
-        <div>
-            <h1>Detection Results</h1>
-            <Grid
-                container
-                spacing={2}
-                sx={{
-                    justifyContent: 'center',
-                    maxWidth: '70%',
-                    margin: '0 auto',
-                }}
-            >
+        <div style={{ width: '100vw' }}>
+            <h1 style={{ marginTop: '90px' }}>Detection Results</h1>
+            <Container maxWidth='md'>
                 {detectionResults.map((result, index) => {
                     const getBoundingBoxes = () => {
                         const detections = Object.values(result?.analysis?.detections);
@@ -28,7 +20,7 @@ const ResultsPage: React.FC = () => {
                     };
 
                     return (
-                        <Grid item xs={12} lg={12} key={index}>
+                        <Grid item xs={12} xl={12} key={index}>
                             <IndividualResult
                                 boundingBoxes={getBoundingBoxes()}
                                 image={{ src: result?.image?.source }}
@@ -36,7 +28,7 @@ const ResultsPage: React.FC = () => {
                         </Grid>
                     );
                 })}
-            </Grid>
+            </Container>
         </div>
     );
 };
