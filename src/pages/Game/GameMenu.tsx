@@ -14,7 +14,7 @@ const InstructionDialog = ({ onClose }: { onClose: () => void }) => {
                 <p style={{ fontSize: 18, lineHeight: 2 }}>
                     <br></br>The objective is to identify the brand logo displayed on the screen.<br></br> Type your
                     guess in the input box and press Enter.<br></br> If your guess is correct, your score will increase.
-                    <br></br> You have 60 seconds to guess as many logos as you can.<br></br>
+                    <br></br> You have 45 seconds to guess as many logos as you can.<br></br>
                     <br></br>
                     <span
                         style={{
