@@ -12,7 +12,6 @@ interface BoundingBoxesProps {
 }
 
 const BoundingBoxes: React.FC<BoundingBoxesProps> = ({ image, boundingBoxes }) => {
-
     return (
         <div style={{ position: 'relative', display: 'inline-block' }}>
             <img src={image.src} alt={image.alt ?? 'Image'} style={{ maxWidth: '100%', maxHeight: '20rem' }} />

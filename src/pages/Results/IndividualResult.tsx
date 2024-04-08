@@ -47,9 +47,7 @@ const IndividualResult = ({ image, boundingBoxes }: IndividualResultProps) => {
                             ))}
                         </List>
                     </Grid>
-					<Grid item>
-						Lorem ipsum
-					</Grid>
+                    <Grid item>Lorem ipsum</Grid>
                 </Grid>
             </CardContent>
         </Card>
