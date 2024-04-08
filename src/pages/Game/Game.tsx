@@ -36,6 +36,14 @@ import TwitterLogo from '../../assets/Car brands/twitter.jpeg';
 import UnderArmourLogo from '../../assets/Car brands/underarmor.webp';
 import VansLogo from '../../assets/Car brands/vans.jpg';
 
+import kappa from '../../assets/Car brands/Kappa.webp';
+import fendi from '../../assets/Car brands/Fendi.jpeg';
+import givenchi from '../../assets/Car brands/Givenchy.jpeg';
+import versace from '../../assets/Car brands/Versace.webp';
+import lacoste from '../../assets/Car brands/Lacoste.webp';
+import slazenger from '../../assets/Car brands/slazenger.jpeg';
+import rolex from '../../assets/Car brands/Rolex.png';
+
 const brands = [
     { name: 'Nike', logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg' },
     { name: 'Apple', logo: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg' },
@@ -81,13 +89,20 @@ const brands = [
 
     { name: 'Spotify', logo: SpotifyLogo },
     { name: 'Tayto', logo: TaytoLogo },
+    { name: 'Fendi', logo: fendi },
+    { name: 'Rolex', logo: rolex },
+    { name: 'Slazenger', logo: slazenger },
+    { name: 'Givenchi', logo: givenchi },
+    { name: 'Lacoste', logo: lacoste },
+    { name: 'Kappa', logo: kappa },
+    { name: 'Versace', logo: versace },
 ];
 
 const Game = () => {
     const [currentBrand, setCurrentBrand] = useState<{ name: string; logo?: string }>({ name: '', logo: '' });
     const [userGuess, setUserGuess] = useState('');
     const [score, setScore] = useState(0);
-    const [timeLeft, setTimeLeft] = useState(60);
+    const [timeLeft, setTimeLeft] = useState(45);
     const [guessedBrands, setGuessedBrands] = useState<{ name: string; logo?: string | undefined }[]>([]);
     const [guessStatus, setGuessStatus] = useState('');
 
@@ -106,7 +121,7 @@ const Game = () => {
 
         const resetGame = () => {
             setScore(0);
-            setTimeLeft(60);
+            setTimeLeft(45);
             setGuessedBrands([]);
             setCurrentBrand(chooseRandomBrand());
         };
@@ -131,11 +146,11 @@ const Game = () => {
             setGuessedBrands([...guessedBrands, currentBrand]);
             setCurrentBrand(chooseRandomBrand());
             setGuessStatus('correct');
-            setTimeout(() => setGuessStatus(''), 1000); // Reset guess status after 1 second
+            setTimeout(() => setGuessStatus(''), 1000);
         } else {
             setUserGuess('');
             setGuessStatus('incorrect');
-            setTimeout(() => setGuessStatus(''), 1000); // Reset guess status after 1 second
+            setTimeout(() => setGuessStatus(''), 1000);
         }
     }, [userGuess, currentBrand, score, guessedBrands, chooseRandomBrand]);
 
@@ -156,12 +171,19 @@ const Game = () => {
     return (
         <div className='container'>
             <div className='scoreboard'>
-                <p style={{ color: 'black' }}>
-                    Time Left: <span style={{ color: '#f1356d' }}>{timeLeft} seconds</span>
+                <p style={{ color: '#57c290', marginRight: 60 }}>
+                    <span style={{ textDecoration: 'underline', color: '#57c290', fontSize: 15 }}>
+                        {' '}
+                        TIME LEFT<br></br>
+                    </span>{' '}
+                    <span style={{ color: 'WHITE', textDecoration: 'hidden', fontSize: 40 }}>{timeLeft}</span>
                 </p>
-                <p style={{ color: 'black' }}>
-                    Score:{' '}
+                <p style={{ color: '#57c290' }}>
+                    <span style={{ textDecoration: 'underline', color: '#57c290', fontSize: 15 }}>
+                        YOUR SCORE<br></br>{' '}
+                    </span>
                     <span
+                        style={{ fontSize: 40 }}
                         className={guessStatus === 'correct' ? 'score-correct' : guessStatus === 'incorrect' ? '' : ''}
                     >
                         {score}
