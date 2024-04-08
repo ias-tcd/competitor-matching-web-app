@@ -10,8 +10,8 @@ const ResultsPage: React.FC = () => {
 
     return (
         <div style={{ width: '100vw' }}>
-            <h1 style={{ marginTop: '90px' }}>Detection Results</h1>
-            <Container maxWidth='md'>
+            <h1 style={{ marginTop: '4em' }}>Detection Results</h1>
+            <Container maxWidth='lg'>
                 {detectionResults.map((result, index) => {
                     const getBoundingBoxes = () => {
                         const detections = Object.values(result?.analysis?.detections);
