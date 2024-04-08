@@ -10,7 +10,15 @@ const ResultsPage: React.FC = () => {
     return (
         <div>
             <h1>Detection Results</h1>
-            <Grid container spacing={2}>
+            <Grid
+                container
+                spacing={2}
+                sx={{
+                    justifyContent: 'center',
+                    maxWidth: '70%',
+                    margin: '0 auto',
+                }}
+            >
                 {detectionResults.map((result, index) => {
                     const getBoundingBoxes = () => {
                         const detections = Object.values(result?.analysis?.detections);
