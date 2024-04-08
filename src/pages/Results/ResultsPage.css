@@ -1,0 +1,14 @@
+.results-heading {
+    position: sticky;
+    top: 3.5em;
+}
+
+.container-wrapper {
+    position: relative;
+    top: 12em;
+}
+
+.container-wrapper-double {
+    position: relative;
+    top: 1em;
+}
