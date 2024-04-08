@@ -23,7 +23,6 @@ export interface BBox {
 }
 
 export interface Detection {
-    brand: string;
     bbox: BBox;
     confidence: number;
 }
