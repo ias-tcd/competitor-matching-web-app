@@ -1,19 +1,14 @@
-.results-page {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
+.results-heading {
+    position: sticky;
+    top: 3.5em;
 }
 
-.result-container {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 20px;
+.container-wrapper {
+    position: relative;
+    top: 12em;
 }
 
-.detection-info {
-    margin-left: 20px;
-}
-
-.model-info {
-    margin-top: 40px;
+.container-wrapper-double {
+    position: relative;
+    top: 1em;
 }
