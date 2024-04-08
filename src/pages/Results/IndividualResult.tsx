@@ -14,7 +14,7 @@ interface IndividualResultProps {
 }
 
 const IndividualResult = ({ image, boundingBoxes }: IndividualResultProps) => {
-    const brandNames = boundingBoxes?.filter(bbox => !!bbox?.brand)?.map(bbox => bbox?.brand);
+    const brandNames = [...new Set(boundingBoxes?.filter(bbox => !!bbox?.brand)?.map(bbox => bbox?.brand))];
 
     return (
         <Card variant='outlined' sx={{ mb: '1em' }}>
