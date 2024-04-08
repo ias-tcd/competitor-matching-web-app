@@ -156,7 +156,7 @@
     transform: rotateY(180deg);
     flex-direction: column;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(to top, #366342, #39FF14, #39FF14, #366342);
+    background: linear-gradient(to top, #366342, #39ff14, #39ff14, #366342);
 }
 
 @keyframes wave {

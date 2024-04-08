@@ -95,7 +95,7 @@ const brands = [
     { name: 'Givenchi', logo: givenchi },
     { name: 'Lactose', logo: lacoste },
     { name: 'Kappa', logo: kappa },
-    { name: 'Versace', logo: versace }
+    { name: 'Versace', logo: versace },
 ];
 
 const Game = () => {
@@ -146,11 +146,11 @@ const Game = () => {
             setGuessedBrands([...guessedBrands, currentBrand]);
             setCurrentBrand(chooseRandomBrand());
             setGuessStatus('correct');
-            setTimeout(() => setGuessStatus(''), 1000); 
+            setTimeout(() => setGuessStatus(''), 1000);
         } else {
             setUserGuess('');
             setGuessStatus('incorrect');
-            setTimeout(() => setGuessStatus(''), 1000); 
+            setTimeout(() => setGuessStatus(''), 1000);
         }
     }, [userGuess, currentBrand, score, guessedBrands, chooseRandomBrand]);
 
@@ -170,15 +170,20 @@ const Game = () => {
 
     return (
         <div className='container'>
-        
             <div className='scoreboard'>
-                <p style={{ color: '#57c290',marginRight:60  }}>
-                  <span style={{textDecoration:'underline', color: '#57c290', fontSize:15}}> TIME LEFT<br></br></span> <span style={{ color: 'WHITE', textDecoration:'hidden',fontSize:40 }}>{timeLeft}</span>
+                <p style={{ color: '#57c290', marginRight: 60 }}>
+                    <span style={{ textDecoration: 'underline', color: '#57c290', fontSize: 15 }}>
+                        {' '}
+                        TIME LEFT<br></br>
+                    </span>{' '}
+                    <span style={{ color: 'WHITE', textDecoration: 'hidden', fontSize: 40 }}>{timeLeft}</span>
                 </p>
                 <p style={{ color: '#57c290' }}>
-                   <span style={{textDecoration:'underline', color: '#57c290', fontSize:15}}>YOUR SCORE<br></br>{' '}</span>
+                    <span style={{ textDecoration: 'underline', color: '#57c290', fontSize: 15 }}>
+                        YOUR SCORE<br></br>{' '}
+                    </span>
                     <span
-                        style={{fontSize:40}}
+                        style={{ fontSize: 40 }}
                         className={guessStatus === 'correct' ? 'score-correct' : guessStatus === 'incorrect' ? '' : ''}
                     >
                         {score}

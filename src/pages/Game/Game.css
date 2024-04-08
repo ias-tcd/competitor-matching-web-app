@@ -58,7 +58,7 @@ button:hover {
     padding: 10px 40px;
     font-size: 20px;
     border-radius: 10px;
-    background-color: rgba(238, 229, 229, 0.0);
+    background-color: rgba(238, 229, 229, 0);
     margin-bottom: 10px;
 }
 
@@ -137,8 +137,3 @@ button:hover {
 span {
     color: #fff;
 }
-
-
-
-
-
