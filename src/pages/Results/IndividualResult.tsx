@@ -20,13 +20,7 @@ const IndividualResult = ({ image, boundingBoxes }: IndividualResultProps) => {
             <CardContent>
                 <Grid container spacing={2}>
                     <Grid item sx={{ maxWidth: '20rem', maxHeight: '20rem' }}>
-                        <BoundingBoxes
-                            boundingBoxes={boundingBoxes}
-                            image={image}
-                            colours={{
-                                'North Face': 'green',
-                            }}
-                        />
+                        <BoundingBoxes boundingBoxes={boundingBoxes} image={image} />
                     </Grid>
                     <Grid item sx={{ padding: '0.5em' }}>
                         <Typography variant='h5'>Brands Identified</Typography>

@@ -1,9 +1,6 @@
 import React from 'react';
 import { BBox as IBoundingBox } from '../../types/interfaces';
-
-type ColoursMap = {
-    [key: string]: string;
-};
+import { getColour } from '../../utils/GetBrandColour';
 
 interface BoundingBoxesProps {
     image: {
@@ -12,17 +9,9 @@ interface BoundingBoxesProps {
         file?: File;
     };
     boundingBoxes: IBoundingBox[];
-    colours?: ColoursMap;
 }
 
-const BoundingBoxes: React.FC<BoundingBoxesProps> = ({ image, boundingBoxes, colours }) => {
-    const getColour = (name: string | null) => {
-        if (!name) {
-            return 'red';
-        }
-        const colour = (colours ?? {})[name as keyof ColoursMap];
-        return colour ?? 'red';
-    };
+const BoundingBoxes: React.FC<BoundingBoxesProps> = ({ image, boundingBoxes }) => {
 
     return (
         <div style={{ position: 'relative', display: 'inline-block' }}>
