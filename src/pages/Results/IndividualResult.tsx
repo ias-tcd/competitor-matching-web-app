@@ -1,4 +1,4 @@
-import { Card, Typography, Grid } from '@mui/material';
+import { Card, Grid } from '@mui/material';
 import CardContent from '@mui/material/CardContent';
 import { BBox as IBoundingBox } from '../../types/interfaces';
 import BoundingBoxes from '../../components/BoundingBoxes/BoundingBoxes';

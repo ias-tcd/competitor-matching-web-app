@@ -1,7 +1,6 @@
 import React from 'react';
 import { Grid } from '@mui/material';
 import { useDetectionResults } from '../../context/DetectionResultsContext';
-import BoundingBoxes from '../../components/BoundingBoxes/BoundingBoxes';
 import IndividualResult from './IndividualResult';
 import { Detection } from '../../types/interfaces';
 
@@ -27,14 +26,6 @@ const ResultsPage: React.FC = () => {
                                 image={{ src: result?.image?.source }}
                             />
                         </Grid>
-                        // <div key={index} style={{ position: 'relative', margin: '20px' }}>
-                        //     <BoundingBoxes
-                        //         boundingBoxes={getBoundingBoxes()}
-                        //         image={{
-                        //             src: result?.image?.source,
-                        //         }}
-                        //     />
-                        // </div>
                     );
                 })}
             </Grid>
