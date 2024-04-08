@@ -19,17 +19,17 @@ import goal from '../../assets/TheGoal.webp';
 
 const AboutUs = () => {
     const cardData = [
-        { name: 'Sam', role: 'Team Lead', Pic: SamPic},
-        { name: 'Eva', role: 'API Team', Pic: EvaPic},
-        { name: 'Darragh', role: 'Model Team', Pic: DarraghPic},
-        { name: 'Amy', role: 'UI Team', Pic: AmyPic}, 
-        { name: 'Temi', role: 'Data Team', Pic: TemiPic},
-        { name: 'Beni', role: 'UI Team', Pic: BeniPic},
-        { name: 'Dhruv', role: 'API Team', Pic: DhruvPic},
-        { name: 'Hanna', role: 'Model Team', Pic: HannaPic},
-        { name: 'Tuathal', role: 'Data Team', Pic: TuathalPic},
-        { name: 'Peng', role: 'Model Team', Pic: PengPic},
-        { name: 'Fintan', role: 'Data Team', Pic: FintanPic},
+        { name: 'Sam', role: 'Team Lead', Pic: SamPic },
+        { name: 'Eva', role: 'API Team', Pic: EvaPic },
+        { name: 'Darragh', role: 'Model Team', Pic: DarraghPic },
+        { name: 'Amy', role: 'UI Team', Pic: AmyPic },
+        { name: 'Temi', role: 'Data Team', Pic: TemiPic },
+        { name: 'Beni', role: 'UI Team', Pic: BeniPic },
+        { name: 'Dhruv', role: 'API Team', Pic: DhruvPic },
+        { name: 'Hanna', role: 'Model Team', Pic: HannaPic },
+        { name: 'Tuathal', role: 'Data Team', Pic: TuathalPic },
+        { name: 'Peng', role: 'Model Team', Pic: PengPic },
+        { name: 'Fintan', role: 'Data Team', Pic: FintanPic },
     ];
 
     const [flippedIndex, setFlippedIndex] = useState(-1); // State to keep track of which card to flip
