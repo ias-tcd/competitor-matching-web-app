@@ -19,17 +19,17 @@ import goal from '../../assets/TheGoal.webp';
 
 const AboutUs = () => {
     const cardData = [
-        { name: 'Sam', role: 'Team Lead', Pic: SamPic, position: 'Goalkeeper' },
-        { name: 'Eva', role: 'API Team', Pic: EvaPic, position: 'Defender,Midfield,Attacker' },
-        { name: 'Darragh', role: 'Model Team', Pic: DarraghPic, position: 'Defender,Midfield,Attacker' },
-        { name: 'Amy', role: 'UI Designer', Pic: AmyPic, position: 'Defender,Midfield,Attacker' },
-        { name: 'Temi', role: 'Data Manager', Pic: TemiPic, position: 'Defender,Midfield,Attacker' },
-        { name: 'Beni', role: 'UI Designer', Pic: BeniPic, position: 'Defender,Midfield,Attacker' },
-        { name: 'Dhruv', role: 'API Team', Pic: DhruvPic, position: 'Defender,Midfield,Attacker' },
-        { name: 'Hanna', role: 'Model Team', Pic: HannaPic, position: 'Defender,Midfield,Attacker' },
-        { name: 'Tuathal', role: 'Data Team', Pic: TuathalPic, position: 'Defender,Midfield,Attacker' },
-        { name: 'Peng', role: 'Model Team', Pic: PengPic, position: 'Defender,Midfield,Attacker' },
-        { name: 'Fintan', role: 'Data Team', Pic: FintanPic, position: 'Defender,Midfield,Attacker' },
+        { name: 'Sam', role: 'Team Lead', Pic: SamPic },
+        { name: 'Eva', role: 'API Team', Pic: EvaPic },
+        { name: 'Darragh', role: 'Model Team', Pic: DarraghPic },
+        { name: 'Amy', role: 'UI Team', Pic: AmyPic },
+        { name: 'Temi', role: 'Data Team', Pic: TemiPic },
+        { name: 'Beni', role: 'UI Team', Pic: BeniPic },
+        { name: 'Dhruv', role: 'API Team', Pic: DhruvPic },
+        { name: 'Hanna', role: 'Model Team', Pic: HannaPic },
+        { name: 'Tuathal', role: 'Data Team', Pic: TuathalPic },
+        { name: 'Peng', role: 'Model Team', Pic: PengPic },
+        { name: 'Fintan', role: 'Data Team', Pic: FintanPic },
     ];
 
     const [flippedIndex, setFlippedIndex] = useState(-1); // State to keep track of which card to flip
@@ -112,7 +112,7 @@ const AboutUs = () => {
                                 <div className='team-member'>
                                     <img src={data.Pic} alt={`Team Member ${index + 1}`} />
                                     <div className='team-member-name'>
-                                        <p style={{ color: '#2D5E4A' }}>{data.name}</p>
+                                        <p style={{ color: 'BLACK' }}>{data.name}</p>
                                     </div>
                                     <div className='team-member-detail'>
                                         <p>{data.role}</p>
