@@ -55,7 +55,7 @@ describe('testing the Home component', () => {
         expect(dialog.length).toEqual(1);
     });
 
-    it('should open the dialog when the text button is selected', () => {
+    it.skip('should open the dialog when the text button is selected', () => {
         const imageButton = screen.getByText('Text');
         fireEvent.click(imageButton);
 
@@ -63,12 +63,28 @@ describe('testing the Home component', () => {
         expect(dialog.length).toEqual(1);
     });
 
-    it('should open the dialog when the video button is selected', () => {
+    it('should not open the dialog when the text button is selected since it is not supported', () => {
+        const imageButton = screen.getByText('Text');
+        fireEvent.click(imageButton);
+
+        const dialog = document.getElementsByClassName('overlay');
+        expect(dialog.length).toEqual(0);
+    });
+
+    it.skip('should open the dialog when the video button is selected', () => {
         const imageButton = screen.getByText('Video');
         fireEvent.click(imageButton);
 
         const dialog = document.getElementsByClassName('overlay');
         expect(dialog.length).toEqual(1);
+    });
+
+    it('should not open the dialog when the video button is selected since it is not supported', () => {
+        const imageButton = screen.getByText('Video');
+        fireEvent.click(imageButton);
+
+        const dialog = document.getElementsByClassName('overlay');
+        expect(dialog.length).toEqual(0);
     });
 
     it('should close the image dialog on cancel', () => {
@@ -82,9 +98,9 @@ describe('testing the Home component', () => {
         expect(dialog.length).toEqual(0);
     });
 
-    it('should close the video dialog on cancel', () => {
-        const imageButton = screen.getByText('Video');
-        fireEvent.click(imageButton);
+    it.skip('should close the video dialog on cancel', () => {
+        const videoButton = screen.getByText('Video');
+        fireEvent.click(videoButton);
 
         const cancel = document.getElementsByClassName('cancel-button')[0];
         fireEvent.click(cancel);
@@ -93,9 +109,9 @@ describe('testing the Home component', () => {
         expect(dialog.length).toEqual(0);
     });
 
-    it('should close the text dialog on cancel', () => {
-        const imageButton = screen.getByText('Text');
-        fireEvent.click(imageButton);
+    it.skip('should close the text dialog on cancel', () => {
+        const textButton = screen.getByText('Text');
+        fireEvent.click(textButton);
 
         const cancel = document.getElementsByClassName('cancel-button')[0];
         fireEvent.click(cancel);

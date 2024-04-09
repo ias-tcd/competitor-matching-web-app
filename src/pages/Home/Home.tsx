@@ -32,10 +32,10 @@ function Home(): JSX.Element {
                 <p style={{ fontSize: 20 }}>Choose the type of media you want to upload:</p>
             </div>
             <div id='buttons' className='media-type-options'>
-                <button className='media-type-button' data-type='Text' onClick={() => openDialog('Text')}>
+                <button className='media-type-button' data-type='Text' onClick={() => openDialog('Text')} disabled>
                     Text
                 </button>
-                <button className='media-type-button' data-type='Video' onClick={() => openDialog('Video')}>
+                <button className='media-type-button' data-type='Video' onClick={() => openDialog('Video')} disabled>
                     Video
                 </button>
                 <button className='media-type-button' data-type='Images' onClick={() => openDialog('Images')}>
