@@ -11,19 +11,24 @@ interface BrandCheckBoxProps {
     handleCheckboxChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const BrandCheckBox = ({ brand, index, handleCheckboxChange }: BrandCheckBoxProps) => (
-    <>
-        <input
-            type='checkbox'
-            id={brand?.name}
-            className={`brand-checkbox${index + 1}`}
-            value={JSON.stringify(brand)}
-            onChange={handleCheckboxChange}
-        />
-        <label htmlFor={brand?.name}>{brand?.name}</label>
-        {index % 4 === 3 && <br />}
-    </>
-);
+const BrandCheckBox = ({ brand, index, handleCheckboxChange }: BrandCheckBoxProps) => {
+    const { enabled } = brand;
+
+    return (
+        <>
+            <input
+                type='checkbox'
+                id={brand?.name}
+                className={`brand-checkbox${index + 1}`}
+                value={JSON.stringify(brand)}
+                onChange={handleCheckboxChange}
+                disabled={!enabled}
+            />
+            <label htmlFor={brand?.name}>{brand?.name}</label>
+            {index % 4 === 3 && <br />}
+        </>
+    );
+};
 
 interface ImageState {
     url: string;
@@ -154,14 +159,16 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose }) => {
             </div>
             <div className='brand-checkbox'>
                 <p>Brands:</p>
-                {brands?.map((brand: Brand, index: number) => (
-                    <BrandCheckBox
-                        handleCheckboxChange={handleCheckboxChange}
-                        brand={brand}
-                        index={index}
-                        key={brand?.id}
-                    />
-                ))}
+                {brands
+                    ?.filter((brand: Brand) => brand?.enabled)
+                    ?.map((brand: Brand, index: number) => (
+                        <BrandCheckBox
+                            handleCheckboxChange={handleCheckboxChange}
+                            brand={brand}
+                            index={index}
+                            key={brand?.id}
+                        />
+                    ))}
             </div>
             {showWarning && <p style={{ display: 'block', color: 'red' }}>Please select an image(s)</p>}
             {showBrandWarning && <p style={{ display: 'block', color: 'red' }}>Please select a brand(s)</p>}
