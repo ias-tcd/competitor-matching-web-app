@@ -166,7 +166,11 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onClose }) => {
             {showWarning && <p style={{ display: 'block', color: 'red' }}>Please select an image(s)</p>}
             {showBrandWarning && <p style={{ display: 'block', color: 'red' }}>Please select a brand(s)</p>}
             <p>Checked brands: {checkedBrands?.map(brand => brand?.name).join(', ')}</p>
-            <button className='upload-button' onClick={handleUpload}>
+            <button
+                className='upload-button'
+                onClick={handleUpload}
+                disabled={!checkedBrands?.length || !images?.length}
+            >
                 Upload Images
             </button>
             <button className='cancel-button' onClick={handleCancel}>
